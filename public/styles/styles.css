@@ -1,3 +1,25 @@
-.list-group-item {
-  line-height: 2.5;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+.section {
+  height: 600px;
+}
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+}
+.brand-logo {
+  font-family: 'Oswald', sans-serif; 
+}
+/* label color */
+.input-field label {
+  color: #000;
+}
+.parallax-container {
+  height: 663px;
 }
