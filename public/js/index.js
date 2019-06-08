@@ -1,7 +1,6 @@
 $(document).ready(function(){
   $('.parallax').parallax();
-});
-
-$(document).ready(function(){
-$('.modal').modal();
+  $('.modal').modal();
+  $('.dropdown-trigger').dropdown();
+  $('select').formSelect();
 });
