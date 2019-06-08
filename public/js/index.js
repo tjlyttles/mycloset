@@ -21,12 +21,17 @@ $("#submit").on("click", function(event) {
         .trim(),
       price: $("#shirt-price")
         .val()
-        .trim()
+        .trim(),
+      condition: $("#q4")
+        .val()
+        .trim(),
+      suitedFor: $("#q5").val(),
+      userFile: $("#user-file-path").val()
     };
     console.log(newItem);
   });
 
-  $.post("/api/shirt", newItem).then(function(data) {
-    console.log(data);
-  });
+  // $.post("/api/shirt", newItem).then(function(data) {
+  //   console.log(data);
+  // });
 });
