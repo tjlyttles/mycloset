@@ -9,11 +9,11 @@
           <li><a href="#">Home</a></li>
           <li><a href="#">Services</a></li>
           <!-- Modal Trigger -->
-          <a class="waves-effect waves-light btn yellow darken-2 modal-trigger" href="#modal1">Log In</a>                        
+          <a class="waves-effect waves-light btn yellow darken-2 modal-trigger" href="#modal1">Log In</a>
         </ul>
       </div>
     </div>
-  </nav> 
+  </nav>
   <!-- Log in Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -27,14 +27,14 @@
           <input placeholder="Placeholder" id="password" type="text" class="validate">
           <label for="password">PASSWORD</label>
         </div>
-      </div>    
+      </div>
     </div>
     <div class="modal-footer">
-        <button class=" modal-close btn waves-effect waves-yellow darken-2 btn-flat" type="submit" name="action">
-          <a href="#" class="modal-close waves-effect waves-yellow darken-2 btn-flat">Log in</a>  
-        </button>
+      <button class="modal-close btn waves-effect waves-yellow darken-2 btn-flat" type="submit" name="action">
+        <a href="#" class="modal-close waves-effect waves-yellow darken-2 btn-flat">Log in</a>
+      </button>
     </div>
-  </div>                  
+  </div>
 </header>
 <main>
   <div class="parallax-container center valign-wrapper">
@@ -48,16 +48,99 @@
           <br>
           <br>
           <br>
-          <h1 class="white-text overlay center-align">WELCOME MY CLOSET</h1> 
-          <a class="waves-effect waves-light btn-large yellow darken-2 lighten-2"><i class="material-icons">search</i></a> 
-          <a class="waves-effect waves-light btn-large yellow darken-2 lighten-2" >Add Item</a> 
+          <h1 class="white-text overlay center-align">WELCOME MY CLOSET</h1>
+          <a class="waves-effect waves-light btn-large yellow darken-2 lighten-2"><i
+              class="material-icons">search</i></a>
+          <a class="waves-effect waves-light btn-large yellow darken-2 lighten-2 modal-trigger"
+            href="#add-item-modal">Add Item</a>
+          <div id="add-item-modal" class="modal">
+            <div class="modal-content">
+              <h4>Add An Item</h4>
+              <div class="row">
+                <div class="input-field col s6">
+                  <div class="input-field col s12">
+                    <select>
+                      <option value="" disabled selected>Size</option>
+                      <option value="small">small</option>
+                      <option value="medium">medium</option>
+                      <option value="large">large</option>
+                      <option value="xlarge">xlarge</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-field col s6">
+                  <div class="input-field col s12">
+                    <select>
+                      <option value="" disabled selected>Color</option>
+                      <option value="red">Red</option>
+                      <option value="black">Black</option>
+                      <option value="blue">Blue</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-field col s6">
+                  <div class="input-field col s12">
+                    <select>
+                      <option value="" disabled selected>Type</option>
+                      <option value="short-sleeve">short-sleeve</option>
+                      <option value="long-sleeve">long-sleeve</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-field col s6">
+                  <div class="input-field col s12">
+                    <select>
+                      <option value="" disabled selected>Condition</option>
+                      <option value="new">new</option>
+                      <option value="used">used</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-field col s6">
+                  <div class="input-field col s12">
+                    <select multiple>
+                      <option value="" disabled selected>Suitable for:</option>
+                      <option value="gender-n">Gender Neutral</option>
+                      <option value="female">Female</option>
+                      <option value="male">Male</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-field col s6">
+                  <div class="input-field col s12">
+                    <input placeholder="$5.00" id="shirt-price" type="text" class="validate">
+                    <label for="shirt-price" id="shirt-price-label">Price</label>
+                  </div>
+                </div>
+                <div class="input-field col s12">
+                  <div class="input-field col s12">
+                    <form action="#">
+                      <div class="file-field input-field">
+                        <div class="waves-effect waves-light btn yellow darken-2">
+                          <span>Photo</span>
+                          <input type="file" multiple>
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text" placeholder="Upload a photo of your item">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="input-field col s12">
+                  <div class="input-field col s12">
+                    <button class="waves-effect waves-light btn yellow darken-2 modal-close">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div> 
+      </div>
+      <div class="parallax">
+        <img src="closet.jpeg" class="responsive-img">
+      </div>
     </div>
-    <div class="parallax">
-      <img src="closet.jpeg" class="responsive-img">
-    </div>
-  </div>
 </main>
 <!-- Footer -->
 <footer class="page-footer black lighten-2">
@@ -65,19 +148,19 @@
     <div class="row">
       <div class="col l6 s12"></div>
       <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-          </ul>
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
     <div class="container center-align">
-    © 2019 Copyright  My Closet - All Rights Reserved 
+      © 2019 Copyright My Closet - All Rights Reserved
     </div>
   </div>
 </footer>
