@@ -31,7 +31,7 @@ $("#submit").on("click", function(event) {
   });
   console.log(newItem);
 
-  $.post("/api/shirt", newItem).then(function(data) {
-    console.log(data);
-  });
+  // $.post("/api/shirt", newItem).then(function(data) {
+  //   console.log(data);
+  // });
 });
