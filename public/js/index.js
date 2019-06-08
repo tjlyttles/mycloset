@@ -28,10 +28,10 @@ $("#submit").on("click", function(event) {
       suitedFor: $("#q5").val(),
       userFile: $("#user-file-path").val()
     };
-    console.log(newItem);
   });
+  console.log(newItem);
 
-  // $.post("/api/shirt", newItem).then(function(data) {
-  //   console.log(data);
-  // });
+  $.post("/api/shirt", newItem).then(function(data) {
+    console.log(data);
+  });
 });
