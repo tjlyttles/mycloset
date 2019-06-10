@@ -58,10 +58,13 @@
             href="#add-item-modal">Add Item</a>
           <div id="add-item-modal" class="modal">
             <div class="modal-content">
-              <h4>Add An Item</h4>
-              <div class="row">
+    <h4>Add An Item</h4>
+    <ul class="collapsible">
+    <li>
+      <div class="collapsible-header">Shirt</div>
+      <div class="collapsible-body">
+      <div class="row">
                 <div class="input-field col s6">
-                  <div class="input-field col s12">
                     <select class="user-input" id="q1">
                       <option value="" disabled selected>Size</option>
                       <option value="small">small</option>
@@ -69,55 +72,42 @@
                       <option value="large">large</option>
                       <option value="xlarge">xlarge</option>
                     </select>
-                  </div>
                 </div>
                 <div class="input-field col s6">
-                  <div class="input-field col s12">
                     <select class="user-input" id="q2">
                       <option value="" disabled selected>Color</option>
                       <option value="red">Red</option>
                       <option value="black">Black</option>
                       <option value="blue">Blue</option>
                     </select>
-                  </div>
                 </div>
                 <div class="input-field col s6">
-                  <div class="input-field col s12">
                     <select class="user-input" id="q3">
                       <option value="" disabled selected>Type</option>
                       <option value="short-sleeve">short-sleeve</option>
                       <option value="long-sleeve">long-sleeve</option>
                     </select>
-                  </div>
                 </div>
                 <div class="input-field col s6">
-                  <div class="input-field col s12">
                     <select class="user-input" id="q4">
                       <option value="" disabled selected>Condition</option>
                       <option value="new">new</option>
                       <option value="used">used</option>
                     </select>
-                  </div>
                 </div>
                 <div class="input-field col s6">
-                  <div class="input-field col s12">
                     <select class="user-input" id="q5">
                       <option value="" disabled selected>Suitable for:</option>
                       <option value="gender-n">Gender Neutral</option>
                       <option value="female">Female</option>
                       <option value="male">Male</option>
                     </select>
-                  </div>
                 </div>
                 <div class="input-field col s6">
-                  <div class="input-field col s12">
                     <input class="user-input" placeholder="$5.00" id="shirt-price" type="text" class="validate">
                     <label for="shirt-price" id="shirt-price-label">Price</label>
-                  </div>
                 </div>
                 <div class="input-field col s12">
-                  <div class="input-field col s12">
-
                     <form action="#">
                       <div class="file-field input-field">
                         <div class="waves-effect waves-light btn yellow darken-2">
@@ -129,15 +119,101 @@
                         </div>
                       </div>
                     </form>
-
-                  </div>
                 </div>
                 <div class="input-field col s12">
-                  <div class="input-field col s12">
                     <button class="waves-effect waves-light btn yellow darken-2 modal-close" id="submit">Submit</button>
-                  </div>
                 </div>
-              </div>
+
+
+      </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">Pants</div>
+      <div class="collapsible-body">
+      <div class="row">
+
+
+      </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">Dress</div>
+      <div class="collapsible-body">
+      <div class="row">
+                <div class="input-field col s6">
+                    <select class="dress-input" id="dq1">
+                      <option value="" disabled selected>Size</option>
+                      <option value="small">small</option>
+                      <option value="medium">medium</option>
+                      <option value="large">large</option>
+                      <option value="xlarge">xlarge</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="dress-input" id="dq2">
+                      <option value="" disabled selected>Color</option>
+                      <option value="red">Red</option>
+                      <option value="black">Black</option>
+                      <option value="blue">Blue</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="dress-input" id="dq3">
+                      <option value="" disabled selected>Type</option>
+                      <option value="short-sleeve">dress</option>
+                      <option value="long-sleeve">skirt</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="dress-input" id="dq4">
+                      <option value="" disabled selected>Condition</option>
+                      <option value="new">new</option>
+                      <option value="used">used</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="dress-input" id="dq5">
+                      <option value="" disabled selected>Suitable for:</option>
+                      <option value="gender-n">Gender Neutral</option>
+                      <option value="female">Female</option>
+                      <option value="male">Male</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <input class="dress-input" placeholder="$5.00" id="dress-price" type="text" class="validate">
+                    <label for="dress-price" id="dress-price-label">Price</label>
+                </div>
+                <div class="input-field col s12">
+                    <form action="#">
+                      <div class="file-field input-field">
+                        <div class="waves-effect waves-light btn yellow darken-2">
+                          <span>Photo</span>
+                          <input type="file" multiple>
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input id="dress-file-path" class="file-path validate" type="text" placeholder="Upload a photo of your item">
+                        </div>
+                      </div>
+                    </form>
+                </div>
+                <div class="input-field col s12">
+                    <button class="waves-effect waves-light btn yellow darken-2 modal-close" id="submit-dress">Submit</button>
+                </div>
+
+      </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">Shoes</div>
+      <div class="collapsible-body">
+      <div class="row">
+
+
+      </div>
+      </div>
+    </li>
+  </ul>
             </div>
           </div>
         </div>

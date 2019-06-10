@@ -2,7 +2,11 @@
   "development": {
     "username": "root",
     "password": "root",
+<<<<<<< HEAD
     "port": 3307,
+=======
+    "port": 3306,
+>>>>>>> 9337f1b650bb65a89d23b25083cfca55831f5f80
     "database": "closetdb",
     "host": "localhost",
     "dialect": "mysql"
