@@ -21,4 +21,24 @@ module.exports = function(app) {
       res.json(dbShirt);
     });
   });
+
+  app.get("/api/dress", function(req, res) {
+    db.Dress.findAll({}).then(function(dbDress) {
+      res.json(dbDress);
+    });
+  });
+
+  // Create a new example
+  app.post("/api/dress", function(req, res) {
+    db.Dress.create(req.body).then(function(dbDress) {
+      res.json(dbDress);
+    });
+  });
+
+  // Delete an example by id
+  app.delete("/api/dress/:id", function(req, res) {
+    db.Dress.destroy({ where: { id: req.params.id } }).then(function(dbDress) {
+      res.json(dbDress);
+    });
+  });
 };

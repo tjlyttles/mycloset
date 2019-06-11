@@ -17,9 +17,13 @@ h1 {
   font-family: 'Oswald', sans-serif; 
 }
 /* label color */
-.input-field label {
+.input-field label, h4, .collapsible{
   color: #000;
 }
 .parallax-container {
   height: 663px;
+}
+
+#shirt-price-label, #dress-price-label {
+  font-size: 1.5em;
 }

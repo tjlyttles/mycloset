@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Shirt = sequelize.define("Shirt", {
+  var Dress = sequelize.define("Dress", {
     size: DataTypes.STRING,
     color: DataTypes.STRING,
     type: DataTypes.STRING,
@@ -8,5 +8,5 @@ module.exports = function(sequelize, DataTypes) {
     suitedFor: DataTypes.STRING,
     userFile: DataTypes.STRING
   });
-  return Shirt;
+  return Dress;
 };
