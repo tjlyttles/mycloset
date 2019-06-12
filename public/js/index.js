@@ -4,6 +4,7 @@ $(document).ready(function() {
   $(".dropdown-trigger").dropdown();
   $("select").formSelect();
   $(".collapsible").collapsible();
+  $(".sidenav").sidenav();
 });
 
 $("#submit").on("click", function(event) {
