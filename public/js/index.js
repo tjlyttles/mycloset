@@ -4,6 +4,7 @@ $(document).ready(function() {
   $(".dropdown-trigger").dropdown();
   $("select").formSelect();
   $(".collapsible").collapsible();
+  $(".sidenav").sidenav();
 });
 
 $("#submit").on("click", function(event) {
@@ -32,16 +33,16 @@ $("#submit").on("click", function(event) {
   });
   console.log(newItem);
 
-  // $.post("/api/shirt", newItem).then(function(data) {
-  //   console.log(data);
-  //   $("#q1").val("");
-  //   $("#q2").val("");
-  //   $("#q3").val("");
-  //   $("#shirt-price").val("");
-  //   $("#q4").val("");
-  //   $("#q5").val("");
-  //   $("#user-file-path").val("");
-  // });
+  $.post("/api/shirt", newItem).then(function(data) {
+    console.log(data);
+    $("#q1").val("");
+    $("#q2").val("");
+    $("#q3").val("");
+    $("#shirt-price").val("");
+    $("#q4").val("");
+    $("#q5").val("");
+    $("#user-file-path").val("");
+  });
 });
 
 $("#submit-dress").on("click", function(event) {
@@ -70,14 +71,14 @@ $("#submit-dress").on("click", function(event) {
   });
   console.log(newDress);
 
-  // $.post("/api/dress", newDress).then(function(data) {
-  //   console.log(data);
-  //   $("#dq1").val("");
-  //   $("#dq2").val("");
-  //   $("#dq3").val("");
-  //   $("#dress-price").val("");
-  //   $("#dq4").val("");
-  //   $("#dq5").val("");
-  //   $("#dress-file-path").val("");
-  // });
+  $.post("/api/dress", newDress).then(function(data) {
+    console.log(data);
+    $("#dq1").val("");
+    $("#dq2").val("");
+    $("#dq3").val("");
+    $("#dress-price").val("");
+    $("#dq4").val("");
+    $("#dq5").val("");
+    $("#dress-file-path").val("");
+  });
 });

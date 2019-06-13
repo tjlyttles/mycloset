@@ -3,9 +3,61 @@
     <nav class="black lighten-2">
         <div class="container">
             <div class="nav-wrapper">
+                {{! This is test Search }}
+                <ul id="slide-out" class="sidenav">
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Search<i class="material-icons">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                        <a href="#!">Shirt</a>
+                                        </li>
+                                        <li>
+                                        <a href="#!">Pants</a>
+                                        </li>
+                                        <li>
+                                        <a href="#!">Dress</a>
+                                        </li>
+                                        <li>
+                                        <a href="#!">Shoes</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                <li>
+                    <a class="sidenav-trigger show-on-large" href="#!" data-target="slide-out">
+                    <i class="material-icons right">menu</i>
+                    </a>
+                </li>
+                <ul id="dropdown1" class="dropdown-content">
+                    <li>
+                    <a href="#!">Shirt</a>
+                    </li>
+                    <li>
+                    <a href="#!">Pants</a>
+                    </li>
+                    <li>
+                    <a href="#!">Dress</a>
+                    </li>
+                    <li>
+                    <a href="#!">Shoes</a>
+                    </li>
+                </ul>
+                </ul>
+                <a href="#" data-target="slide-out" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+                </a>
+                {{! End of test Search }}
+
                 <a href="#" class="brand-logo"><i class="fas fa-tshirt"></i>My Closet</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="#">Services</a></li>
                     <!-- Modal Trigger-->
                     <a class="waves-effect waves-light btn yellow darken-2 modal-trigger" href="#modal1">Log Out</a>                        
@@ -72,4 +124,4 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="app.js"></script>
+<script src="/js/index.js"></script>
