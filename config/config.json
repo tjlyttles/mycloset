@@ -1,35 +1,4 @@
 {
-<<<<<<< Updated upstream
-  "development": {
-    "username": "root",
-    "password": "root",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "port": 3307,
-=======
-    "port": 3306,
->>>>>>> 9337f1b650bb65a89d23b25083cfca55831f5f80
-=======
->>>>>>> a08927b51497355dde96250d12ae4973d0070196
-    "database": "closetdb",
-    "host": "localhost",
-    "port": 8889,
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "testdb",
-    "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
-  },
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
-  }
-}
-=======
     "development": {
       "username": "root",
       "password": "root",
@@ -50,5 +19,4 @@
       "use_env_variable": "JAWSDB_URL",
       "dialect": "mysql"
     }
-  }
->>>>>>> Stashed changes
+}
