@@ -112,13 +112,13 @@
                           <input type="file" multiple>
                         </div>
                         <div class="file-path-wrapper">
-                          <input id="user-file-path" class="file-path validate" type="text" placeholder="Upload a photo of your item">
+                          <input id="img-url" class="file-path validate" type="text" placeholder="Upload a photo of your item">
                         </div>
                       </div>
                     </form>
                 </div>
-                <div class="input-field col s12">
-                    <button class="waves-effect waves-light btn yellow darken-2 modal-close" id="submit">Submit</button>
+                <div id="submit-div" class="input-field col s12">
+                    <button class="waves-effect waves-light btn yellow darken-2" id="submit">Submit</button>
                 </div>
 
 
@@ -128,8 +128,66 @@
     <li>
       <div class="collapsible-header">Pants</div>
       <div class="collapsible-body">
-      <div class="row">
-
+      <div class="row" id="pants-row">
+<div class="input-field col s6">
+                    <select class="pants-input" id="pq1">
+                      <option value="" disabled selected>Size</option>
+                      <option value="small">small</option>
+                      <option value="med">medium</option>
+                      <option value="large">large</option>
+                      <option value="xlarge">x-large</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="pants-input" id="pq2">
+                      <option value="" disabled selected>Color</option>
+                      <option value="red">Red</option>
+                      <option value="black">Black</option>
+                      <option value="blue">Blue</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="pants-input" id="pq3">
+                      <option value="" disabled selected>Type</option>
+                      <option value="formal-pants">formal</option>
+                      <option value="casual-pants">casual</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="pants-input" id="pq4">
+                      <option value="" disabled selected>Condition</option>
+                      <option value="new">new</option>
+                      <option value="used">used</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="pants-input" id="pq5">
+                      <option value="" disabled selected>Suitable for:</option>
+                      <option value="gender-n">Gender Neutral</option>
+                      <option value="female">Female</option>
+                      <option value="male">Male</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <input class="pants-input" placeholder="$5.00" id="pants-price" type="text" class="validate">
+                    <label for="pants-price" id="pants-price-label">Price</label>
+                </div>
+                <div class="input-field col s12">
+                    <form action="#">
+                      <div class="file-field input-field">
+                        <div class="waves-effect waves-light btn yellow darken-2">
+                          <span>Photo</span>
+                          <input type="file" multiple>
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input id="pants-img-url" class="file-path validate" type="text" placeholder="Upload a photo of your item">
+                        </div>
+                      </div>
+                    </form>
+                </div>
+                <div id="pants-submit-div" class="input-field col s12">
+                    <button class="waves-effect waves-light btn yellow darken-2" id="submit-pants">Submit</button>
+                </div>
 
       </div>
       </div>
@@ -189,13 +247,13 @@
                           <input type="file" multiple>
                         </div>
                         <div class="file-path-wrapper">
-                          <input id="dress-file-path" class="file-path validate" type="text" placeholder="Upload a photo of your item">
+                          <input id="dress-img-url" class="file-path validate" type="text" placeholder="Upload a photo of your item">
                         </div>
                       </div>
                     </form>
                 </div>
-                <div class="input-field col s12">
-                    <button class="waves-effect waves-light btn yellow darken-2 modal-close" id="submit-dress">Submit</button>
+                <div id="dress-submit-div" class="input-field col s12">
+                    <button class="waves-effect waves-light btn yellow darken-2" id="submit-dress">Submit</button>
                 </div>
 
       </div>
@@ -205,12 +263,79 @@
       <div class="collapsible-header">Shoes</div>
       <div class="collapsible-body">
       <div class="row">
-
+<div class="input-field col s6">
+                    <select class="shoes-input" id="sq1">
+                      <option value="" disabled selected>Size</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="shoes-input" id="sq2">
+                      <option value="" disabled selected>Color</option>
+                      <option value="red">Red</option>
+                      <option value="black">Black</option>
+                      <option value="blue">Blue</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="shoes-input" id="sq3">
+                      <option value="" disabled selected>Type</option>
+                      <option value="formal-shoe">formal</option>
+                      <option value="casual-shoe">casual</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="shoes-input" id="sq4">
+                      <option value="" disabled selected>Condition</option>
+                      <option value="new">new</option>
+                      <option value="used">used</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <select class="shoes-input" id="sq5">
+                      <option value="" disabled selected>Suitable for:</option>
+                      <option value="female">Female</option>
+                      <option value="male">Male</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <input class="shoes-input" placeholder="$5.00" id="shoes-price" type="text" class="validate">
+                    <label for="shoes-price" id="shoes-price-label">Price</label>
+                </div>
+                <div class="input-field col s12">
+                    <form action="#">
+                      <div class="file-field input-field">
+                        <div class="waves-effect waves-light btn yellow darken-2">
+                          <span>Photo</span>
+                          <input type="file" multiple>
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input id="shoes-img-url" class="file-path validate" type="text" placeholder="Upload a photo of your item">
+                        </div>
+                      </div>
+                    </form>
+                </div>
+                <div id="shoes-submit-div" class="input-field col s12">
+                    <button class="waves-effect waves-light btn yellow darken-2" id="submit-shoes">Submit</button>
+                </div>
 
       </div>
       </div>
     </li>
   </ul>
+                  <div class="input-field col s12">
+                    <button class="waves-effect waves-light btn yellow darken-2 modal-close" id="close">Close</button>
+                </div>
             </div>
           </div>
         </div>

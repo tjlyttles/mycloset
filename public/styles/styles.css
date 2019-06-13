@@ -24,6 +24,38 @@ h1 {
   height: 663px;
 }
 
-#shirt-price-label, #dress-price-label {
+#shirt-price-label, #dress-price-label, #shoes-price-label, #pants-price-label {
   font-size: 1.5em;
+}
+
+#submit-msg {
+  margin-top: 10px;
+  color: black;
+  opacity: 0; 
+  animation: fadeInUp;
+  animation-duration: 5s;
+}
+@keyframes fadeInUp {
+0% { 
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+45% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+
+75% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+
+100% {
+  opacity: 0;
+  -webkit-transform: none;
+  transform: none
+}
 }

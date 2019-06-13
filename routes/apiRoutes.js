@@ -41,4 +41,44 @@ module.exports = function(app) {
       res.json(dbDress);
     });
   });
+
+  app.get("/api/shoes", function(req, res) {
+    db.Shoes.findAll({}).then(function(dbShoes) {
+      res.json(dbShoes);
+    });
+  });
+
+  // Create a new example
+  app.post("/api/shoes", function(req, res) {
+    db.Shoes.create(req.body).then(function(dbShoes) {
+      res.json(dbShoes);
+    });
+  });
+
+  // Delete an example by id
+  app.delete("/api/shoes/:id", function(req, res) {
+    db.Shoes.destroy({ where: { id: req.params.id } }).then(function(dbShoes) {
+      res.json(dbShoes);
+    });
+  });
+
+  app.get("/api/pants", function(req, res) {
+    db.Pants.findAll({}).then(function(dbPants) {
+      res.json(dbPants);
+    });
+  });
+
+  // Create a new example
+  app.post("/api/pants", function(req, res) {
+    db.Pants.create(req.body).then(function(dbPants) {
+      res.json(dbPants);
+    });
+  });
+
+  // Delete an example by id
+  app.delete("/api/pants/:id", function(req, res) {
+    db.Pants.destroy({ where: { id: req.params.id } }).then(function(dbPants) {
+      res.json(dbPants);
+    });
+  });
 };
