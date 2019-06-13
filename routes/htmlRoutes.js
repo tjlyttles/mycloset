@@ -11,6 +11,15 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/userhome", function(req, res) {
+    db.Shirt.findAll({}).then(function(dbShirt) {
+      res.render("userhome", {
+        msg: "Welcome!",
+        shirt: dbShirt
+      });
+    });
+  });
+
   // Load example page and pass in an example by id
   app.get("/shirt/:id", function(req, res) {
     db.Shirt.findOne({ where: { id: req.params.id } }).then(function(dbShirt) {
