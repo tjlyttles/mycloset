@@ -1,121 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>College Ready</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Materialize Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,500&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-        main {
-            flex: 1 0 auto;
-        }
-        .section {
-            height: 600px;
-        }
-        h1, h5 {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-        }
-        .brand-logo {
-            font-family: 'Oswald', sans-serif; 
-        }
-        /* label color */
-        .input-field label {
-            color: #000;
-        }
-        .parallax-container {
-            height: 663px;
-        }
-    </style>  
-</head>
-<body>
-    <header>
-        <!--Navbar -->
-        <nav class="black lighten-2">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="#" class="brand-logo"><i class="fas fa-tshirt"></i>My Closet</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <!-- Modal Trigger-->
-                        <a class="waves-effect waves-light btn yellow darken-2 modal-trigger" href="#modal1">Log Out</a>                        
-                    </ul>
-                </div>
-            </div>
-        </nav> 
-        <!-- Log in Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Log in</h4>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input placeholder="Placeholder" id="user_name" type="text" class="validate">
-                        <label for="user_name">USERNAME</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input placeholder="Placeholder" id="password" type="text" class="validate">
-                        <label for="password">PASSWORD</label>
-                    </div>
-                </div>    
-            </div>
-            <div class="modal-footer">
-                <button class=" modal-close btn waves-effect waves-yellow darken-2 btn-flat" type="submit" name="action">
-                        <a href="#" class="modal-close waves-effect waves-yellow darken-2 btn-flat">Log out</a>  
-                </button>
-            </div>
-        </div>                  
-    </header>
-    <main>
+<header>
+    <!--Navbar -->
+    <nav class="black lighten-2">
         <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo"><i class="fas fa-tshirt"></i>My Closet</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <!-- Modal Trigger-->
+                    <a class="waves-effect waves-light btn yellow darken-2 modal-trigger" href="#modal1">Log Out</a>                        
+                </ul>
+            </div>
+        </div>
+    </nav> 
+    <!-- Log in Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Log in</h4>
             <div class="row">
-                <div class="col s12">
-                    <h5>Search Result</h5>
-                    <hr>
-                    <div id="search-result"></div>   
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" id="user_name" type="text" class="validate">
+                    <label for="user_name">USERNAME</label>
                 </div>
-            </div> 
-            <div class="row">
-                <div class="col s12">
-                    <h5>My Closet</h5>
-                    <hr>
-                    <div id="closet"></div>
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" id="password" type="text" class="validate">
+                    <label for="password">PASSWORD</label>
                 </div>
-            </div> 
-        </div>   
-    </main>
-    <!-- Footer -->
-<footer class="page-footer black lighten-2">
+            </div>    
+        </div>
+        <div class="modal-footer">
+            <button class=" modal-close btn waves-effect waves-yellow darken-2 btn-flat" type="submit" name="action">
+                    <a href="#" class="modal-close waves-effect waves-yellow darken-2 btn-flat">Log out</a>  
+            </button>
+        </div>
+    </div>                  
+</header>
+<main>
     <div class="container">
         <div class="row">
-        <div class="col l6 s12"></div>
-        <div class="col l4 offset-l2 s12"> 
-        </div>
-        </div>
+            <div class="col s12">
+                <h5>Search Result</h5>
+                <hr>
+                <div id="search-result"></div>   
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col s12">
+                <h5>My Closet</h5>
+                <hr>
+                <div id="closet"></div>
+            </div>
+        </div> 
+    </div>   
+</main>
+<!-- Footer -->
+<footer class="page-footer black lighten-2">
+<div class="container">
+    <div class="row">
+    <div class="col l6 s12"></div>
+    <div class="col l4 offset-l2 s12"> 
     </div>
-    <div class="footer-copyright">
-        <div class="container foot-bottom center-align">
-        © 2019 Copyright My Closet - All Rights Reserved
-        </div>
     </div>
+</div>
+<div class="footer-copyright">
+    <div class="container foot-bottom center-align">
+    © 2019 Copyright My Closet - All Rights Reserved
+    </div>
+</div>
 </footer>
 <!-- Library Links -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="app.js"></script>
-</body>
-</html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="app.js"></script>
