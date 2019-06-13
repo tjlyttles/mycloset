@@ -28,6 +28,10 @@ h1 {
   font-size: 1.5em;
 }
 
+#user-name {
+  width: 50%;
+  text-align: center;
+}
 #submit-msg {
   margin-top: 10px;
   color: black;
