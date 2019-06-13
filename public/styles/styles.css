@@ -23,7 +23,12 @@ h1 {
 .parallax-container {
   height: 663px;
 }
-
 #shirt-price-label, #dress-price-label {
   font-size: 1.5em;
+}
+footer {
+  height: 244.84px
+}
+.foot-bottom {
+  margin-top: 150px;
 }
