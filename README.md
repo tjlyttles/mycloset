@@ -30,6 +30,8 @@ Created as the second group project for the UCSD Extension Coding Bootcamp.
 
 -   [PostgreSQL](https://www.postgresql.org/) - Database Used for Production
 
+-   [Jquery](https://jquery.com/) – JavaScript Library
+
 **Authors**
 
 -   **Ava Ai** - [GitHub](https://github.com/Avalineai)
