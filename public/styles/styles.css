@@ -20,14 +20,25 @@ h1 {
 .input-field label, h4, .collapsible{
   color: #000;
 }
-.parallax-container {
+/*.parallax-container {
+  height: 663px;
+}*/
+.home-button {
+  position: absolute;
+  top: 51%;
+  right: 52%;
+}
+.add-button {
+  position: absolute;
+  top: 51%;
+  right: 44%;
+}
+.carousel {
   height: 663px;
 }
-
-#shirt-price-label, #dress-price-label, #shoes-price-label, #pants-price-label {
-  font-size: 1.5em;
+.carousel-fixed-item {
+  top: 300px;
 }
-
 #submit-msg {
   margin-top: 10px;
   color: black;
@@ -59,7 +70,6 @@ h1 {
   transform: none
 }
 }
-
 footer {
   height: 244.84px
 }
