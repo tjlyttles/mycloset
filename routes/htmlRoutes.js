@@ -21,6 +21,14 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/userhome/mens-shirts", function(req, res) {
+    db.Shirt.findOne({ where: { suitedFor: men } }).then(function(dbShirt) {
+      res.render("userhome", {
+        shirt: dbShirt
+      });
+    });
+  });
+
   // Load example page and pass in an example by id
   app.get("/shirt/:id", function(req, res) {
     db.Shirt.findOne({ where: { id: req.params.id } }).then(function(dbShirt) {
