@@ -111,3 +111,14 @@ $(document).ready(function() {
     $("#shoes-result").html(shoesReturned);
    });
 });
+$(document).ready(function() {
+    $(".parallax").parallax();
+    $(".modal").modal();
+    $(".dropdown-trigger").dropdown();
+    $("select").formSelect();
+    $(".collapsible").collapsible();
+    $(".sidenav").sidenav();
+    // $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
+    //   console.log(res);
+    // });
+  });
