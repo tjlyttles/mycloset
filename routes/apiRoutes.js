@@ -1,4 +1,19 @@
 var db = require("../models");
+var fs = require('fs')
+var cloudinary = require('cloudinary').v2
+var multer = require("multer");
+var path = require("path")
+
+//MULTER
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, path.join(__dirname, "../public/uploads/"));
+  },
+  filename: function(req, file, cb) {
+    console.log(file);
+    cb(null, file.originalname);
+  }
+});
 
 module.exports = function(app) {
   // Get all examples
@@ -81,4 +96,48 @@ module.exports = function(app) {
       res.json(dbPants);
     });
   });
+  app.post("/api/upload", function(req, res) {
+    
+    var upload = multer({ storage }).single("file")
+    
+    upload(req, res, function(err) {
+      if (err) {
+        return res.send(err)
+      }
+      console.log('file uploaded to server')
+      console.log(req)
+      //console.log(clothesItem)
+      
+  
+      // SEND FILE TO CLOUDINARY
+      cloudinary.config({
+        cloud_name:	"imnotacloud",
+        api_key: "417287116435888",
+        api_secret:	"4it0q392YHCOoUsFmidIetyizS4"
+      })
+      var path = req.file.path
+      var uniqueFilename = new Date().toISOString()
+  
+      cloudinary.uploader.upload(
+        path,
+        { public_id: uniqueFilename },
+        function(err, image) {
+          
+          if (err) return res.send(err)
+          console.log('Cloudinary upload response:', image)
+          // Now you want to insert the new clothing item,
+          // along with the image url from image.secure_url
+          db.Url.create({
+            imgUrl: image.secure_url
+          }).then(function(dbUrl) {
+            //res.json(dbUrl);
+          });
+          // remove file from server
+          fs.unlinkSync(path)
+          // return image details
+          //res.json(image)
+        }
+      )
+    })
+  })
 };

@@ -37,9 +37,6 @@
   </div>
 </header>
 <main>
-  <div id="userItemDisplay">
-
-  </div>
   <div class="parallax-container center valign-wrapper">
     <div class="container">
       <div class="row">
@@ -108,20 +105,20 @@
                     <label for="shirt-price" id="shirt-price-label">Price</label>
                 </div>
                 <div class="input-field col s12">
-                    <form action="#">
+                    <form id="img-url" enctype="multipart/form-data" action="/api/upload" method="POST">
                       <div class="file-field input-field">
                         <div class="waves-effect waves-light btn yellow darken-2">
                           <span>Photo</span>
-                          <input type="file" multiple>
+                          <input type="file" name="file">
                         </div>
                         <div class="file-path-wrapper">
-                          <input id="img-url" class="file-path validate" type="text" placeholder="Upload a photo of your item">
+                          <input  class="file-path validate" type="text" placeholder="Upload a photo of your item">
                         </div>
                       </div>
                     </form>
                 </div>
                 <div id="submit-div" class="input-field col s12">
-                    <button class="waves-effect waves-light btn yellow darken-2" id="submit">Submit</button>
+                    <button type="button" class="waves-effect waves-light btn yellow darken-2" id="submit" value="submit" onclick="submitForm()">Button</button>
                 </div>
 
 
