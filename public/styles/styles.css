@@ -23,15 +23,18 @@ h1 {
 /*.parallax-container {
   height: 663px;
 }*/
-.home-button {
+.button-container {
   position: absolute;
-  top: 51%;
-  right: 52%;
+  display: flex;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  top: 130px;
 }
-.add-button {
-  position: absolute;
-  top: 51%;
-  right: 44%;
+.button-container .home-button {
+  margin-right: 5px;
 }
 .carousel {
   height: 663px;
