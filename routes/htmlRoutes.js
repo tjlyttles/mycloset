@@ -13,12 +13,13 @@ module.exports = function(app) {
   });
 
   app.get("/userhome", function(req, res) {
-    db.Shirt.findAll({}).then(function(dbShirt) {
-      res.render("userhome", {
-        msg: "Welcome!",
-        shirt: dbShirt
-      });
-    });
+    res.render("userhome");
+    // db.Shirt.findAll({}).then(function(dbShirt) {
+    //   res.render("userhome", {
+    //     msg: "Welcome!",
+    //     shirt: dbShirt
+    // });
+    // console.log(dbShirt);
   });
 
   // Load example page and pass in an example by id
