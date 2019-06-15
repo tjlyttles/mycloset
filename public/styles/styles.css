@@ -83,3 +83,13 @@ footer {
 .foot-bottom {
   margin-top: 150px;
 }
+
+.activator {
+  max-width: 160px;
+}
+
+.card {
+  max-width: 160px;
+  float: left;
+  margin: 10px;
+}

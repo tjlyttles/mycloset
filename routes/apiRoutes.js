@@ -17,6 +17,25 @@ var storage = multer.diskStorage({
 
 module.exports = function(app) {
   // Get all examples
+
+  app.get("/api/allitems", function(req, res) {
+    var allItemsObj = { shirts: null, shoes: null, pants: null, dresses: null };
+    db.Shirt.findAll({}).then(function(dbShirt) {
+      allItemsObj.shirts = dbShirt;
+      db.Dress.findAll({}).then(function(dbDress) {
+        allItemsObj.dresses = dbDress;
+        db.Shoes.findAll({}).then(function(dbShoes) {
+          allItemsObj.shoes = dbShoes;
+          db.Pants.findAll({}).then(function(dbPants) {
+            allItemsObj.pants = dbPants;
+            res.json(allItemsObj);
+            console.log(allItemsObj);
+          });
+        });
+      });
+    });
+  });
+
   app.get("/api/shirt", function(req, res) {
     db.Shirt.findAll({}).then(function(dbShirt) {
       res.json(dbShirt);
