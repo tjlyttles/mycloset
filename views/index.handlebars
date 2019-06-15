@@ -5,9 +5,10 @@
     <div class="container">
       <div class="nav-wrapper">
         <a href="#" class="brand-logo"><i class="fas fa-tshirt"></i>My Closet</a>
+        
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
+          <!--<li><a href="#">Services</a></li>-->
           <!-- Modal Trigger -->
           <a class="waves-effect waves-light btn yellow darken-2 modal-trigger" href="#modal1">Log In</a>
         </ul>
@@ -37,22 +38,26 @@
   </div>
 </header>
 <main>
-  <div class="parallax-container center valign-wrapper">
+  <!--<div class="parallax-container center valign-wrapper">
     <div class="container">
-      <div class="row">
+      <div class="row"> -->
+  <!-- Button Container -->      
+  <div class="button-container">
+    <a class="home-button waves-effect waves-light btn-large yellow darken-2 lighten-2" href="userhome"><i class="material-icons">search</i></a>
+    <a class="add-button waves-effect waves-light btn-large yellow darken-2 lighten-2 modal-trigger" href="#add-item-modal">Add Item</a>
+  </div>
+  <div class="carousel carousel-slider center" data-indicators="true">
+    <div class="container">
+      <div class="carousel-fixed-item center">      
         <div class="col s12 white-text">
+          <!--<br>
           <br>
           <br>
           <br>
           <br>
           <br>
-          <br>
-          <br>
-          <h1 class="white-text overlay center-align">WELCOME MY CLOSET</h1>
-          <a class="waves-effect waves-light btn-large yellow darken-2 lighten-2" href="userhome"><i
-              class="material-icons">search</i></a>
-          <a class="waves-effect waves-light btn-large yellow darken-2 lighten-2 modal-trigger"
-            href="#add-item-modal">Add Item</a>
+          <br> -->
+          <h1 class="white-text overlay center-align">WELCOME TO MY CLOSET</h1>
           <div id="add-item-modal" class="modal">
             <div class="modal-content">
     <h4>Add An Item</h4>
@@ -343,8 +348,22 @@
         </div>
       </div>
     </div>
-    <div class="parallax">
+    <!--<div class="parallax">
       <img src="/assets/images/closet.jpeg" alt="closet" class="responsive-img">
+    </div> -->
+    <div class="carousel-items">
+      <a class="carousel-item" href="#one!">
+        <img src="/assets/images/closet.jpeg">
+      </a>
+      <a class="carousel-item" href="#two!">
+        <img src="/assets/images/sweaters.jpg">
+      </a>
+      <a class="carousel-item" href="#three!">
+        <img src="/assets/images/shoes-closet.jpg"> 
+      </a>
+      <a class="carousel-item" href="#four!">
+        <img src="/assets/images/suits.jpg">
+      </a>
     </div>
   </div>  
 </main>

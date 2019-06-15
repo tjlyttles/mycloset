@@ -20,18 +20,34 @@ h1 {
 .input-field label, h4, .collapsible{
   color: #000;
 }
-.parallax-container {
+/*.parallax-container {
+  height: 663px;
+}*/
+.button-container {
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  top: 130px;
+}
+.button-container .home-button {
+  margin-right: 5px;
+}
+.carousel {
   height: 663px;
 }
-
-#shirt-price-label, #dress-price-label, #shoes-price-label, #pants-price-label {
-  font-size: 1.5em;
+.carousel-fixed-item {
+  top: 300px;
 }
 
 #user-name {
   width: 50%;
   text-align: center;
 }
+
 #submit-msg {
   margin-top: 10px;
   color: black;
@@ -63,7 +79,6 @@ h1 {
   transform: none
 }
 }
-
 footer {
   height: 244.84px
 }
