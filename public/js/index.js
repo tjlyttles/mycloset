@@ -1,6 +1,9 @@
 var newDiv = document.createElement("div");
 var submitMsg = "Your item has been added!";
 newDiv.setAttribute("id", "submit-msg");
+// $(document).ready(function() {
+
+// });
 
 $(document).ready(function() {
   $(".parallax").parallax();
@@ -9,6 +12,9 @@ $(document).ready(function() {
   $("select").formSelect();
   $(".collapsible").collapsible();
   $(".sidenav").sidenav();
+  // $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
+  //   console.log(res);
+  // });
 });
 
 $(document).ready(function() {
