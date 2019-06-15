@@ -112,11 +112,11 @@
                     <label for="shirt-price" id="shirt-price-label">Price</label>
                 </div>
                 <div class="input-field col s12">
-                    <form action="#">
+                    <form id="img-url" enctype="multipart/form-data" action="/api/upload" method="POST">
                       <div class="file-field input-field">
                         <div class="waves-effect waves-light btn yellow darken-2">
                           <span>Photo</span>
-                          <input type="file" multiple>
+                          <input type="file" type="file">
                         </div>
                         <div class="file-path-wrapper">
                           <input id="img-url" class="file-path validate" type="text" placeholder="Upload a photo of your item">
@@ -125,7 +125,7 @@
                     </form>
                 </div>
                 <div id="submit-div" class="input-field col s12">
-                    <button class="waves-effect waves-light btn yellow darken-2" id="submit">Submit</button>
+                    <button type="button" value="submit" onclick="submitForm()" class="waves-effect waves-light btn yellow darken-2" id="submit">Submit</button>
                 </div>
 
 
@@ -180,11 +180,11 @@
                     <label for="pants-price" id="pants-price-label">Price</label>
                 </div>
                 <div class="input-field col s12">
-                    <form action="#">
+                    <form id="img-url" enctype="multipart/form-data" action="/api/upload" method="POST">
                       <div class="file-field input-field">
                         <div class="waves-effect waves-light btn yellow darken-2">
                           <span>Photo</span>
-                          <input type="file" multiple>
+                          <input type="file" type="file">
                         </div>
                         <div class="file-path-wrapper">
                           <input id="pants-img-url" class="file-path validate" type="text" placeholder="Upload a photo of your item">
@@ -193,7 +193,7 @@
                     </form>
                 </div>
                 <div id="pants-submit-div" class="input-field col s12">
-                    <button class="waves-effect waves-light btn yellow darken-2" id="submit-pants">Submit</button>
+                    <button type="button" value="submit" onclick="submitForm()" class="waves-effect waves-light btn yellow darken-2" id="submit-pants">Submit</button>
                 </div>
 
       </div>
@@ -247,11 +247,11 @@
                     <label for="dress-price" id="dress-price-label">Price</label>
                 </div>
                 <div class="input-field col s12">
-                    <form action="#">
+                    <form id="img-url" enctype="multipart/form-data" action="/api/upload" method="POST">
                       <div class="file-field input-field">
                         <div class="waves-effect waves-light btn yellow darken-2">
                           <span>Photo</span>
-                          <input type="file" multiple>
+                          <input type="file" type="file">
                         </div>
                         <div class="file-path-wrapper">
                           <input id="dress-img-url" class="file-path validate" type="text" placeholder="Upload a photo of your item">
@@ -260,7 +260,7 @@
                     </form>
                 </div>
                 <div id="dress-submit-div" class="input-field col s12">
-                    <button class="waves-effect waves-light btn yellow darken-2" id="submit-dress">Submit</button>
+                    <button type="button" value="submit" onclick="submitForm()" class="waves-effect waves-light btn yellow darken-2" id="submit-dress">Submit</button>
                 </div>
 
       </div>
@@ -320,11 +320,11 @@
                     <label for="shoes-price" id="shoes-price-label">Price</label>
                 </div>
                 <div class="input-field col s12">
-                    <form action="#">
+                    <form id="img-url" enctype="multipart/form-data" action="/api/upload" method="POST">
                       <div class="file-field input-field">
                         <div class="waves-effect waves-light btn yellow darken-2">
                           <span>Photo</span>
-                          <input type="file" multiple>
+                          <input type="file" type="file">
                         </div>
                         <div class="file-path-wrapper">
                           <input id="shoes-img-url" class="file-path validate" type="text" placeholder="Upload a photo of your item">
@@ -333,7 +333,7 @@
                     </form>
                 </div>
                 <div id="shoes-submit-div" class="input-field col s12">
-                    <button class="waves-effect waves-light btn yellow darken-2" id="submit-shoes">Submit</button>
+                    <button type="button" value="submit" onclick="submitForm()" class="waves-effect waves-light btn yellow darken-2" id="submit-shoes">Submit</button>
                 </div>
 
       </div>
