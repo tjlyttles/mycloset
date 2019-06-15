@@ -11,9 +11,9 @@ $(document).ready(function() {
         var shirtCard = $(`
           <div class="card">
             <div class="card-image">
-              <img class="activator" src="https://placekitten.com/200/300">
+            <img class="activator" src="https://placekitten.com/200/300">
               
-              <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
+            <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
             <span class="card-title activator">Shirt</span>
