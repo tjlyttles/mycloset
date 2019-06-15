@@ -9,6 +9,7 @@ newDiv.setAttribute("id", "submit-msg");
 $(document).ready(function() {
   $(".parallax").parallax();
   $(".modal").modal();
+  $("#add-item-modal").modal("open");
   $(".dropdown-trigger").dropdown();
   $("select").formSelect();
   $(".collapsible").collapsible();

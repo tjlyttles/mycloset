@@ -20,9 +20,9 @@ h1 {
 .input-field label, h4, .collapsible{
   color: #000;
 }
-/*.parallax-container {
+.parallax-container {
   height: 663px;
-}*/
+}
 .button-container {
   position: absolute;
   display: flex;
@@ -31,7 +31,7 @@ h1 {
   justify-content: center;
   /*height: 100%;*/
   align-items: center;
-  top: 525px;
+  top: 500px;
 }
 .button-container .home-button {
   margin-right: 5px;
@@ -46,6 +46,11 @@ h1 {
   width: 50%;
   text-align: center;
 }
+
+#shirt-price-label, #shoes-price-label, #pants-price-label,#dress-price-label {
+  font-size: 1.4em;
+} 
+
 #submit-msg {
   margin-top: 10px;
   color: black;
