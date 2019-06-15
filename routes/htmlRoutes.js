@@ -22,13 +22,13 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  // app.get("/shirt/:id", function(req, res) {
-  //   db.Shirt.findOne({ where: { id: req.params.id } }).then(function(dbShirt) {
-  //     res.render("shirt", {
-  //       shirt: dbShirt
-  //     });
-  //   });
-  // });
+  app.get("/shirt/:id", function(req, res) {
+    db.Shirt.findOne({ where: { id: req.params.id } }).then(function(dbShirt) {
+      res.render("shirt", {
+        shirt: dbShirt
+      });
+    });
+  });
 
   app.get("/items", function(req, res) {
     res.render("example");

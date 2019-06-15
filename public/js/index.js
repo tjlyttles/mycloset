@@ -14,6 +14,13 @@ $(document).ready(function() {
 function submitForm() {
   $("#img-url").submit();
 }
+$(document).ready(function() {
+  $(".carousel").carousel();
+
+  setInterval(function() {
+    $(".carousel").carousel("next");
+  }, 5000);
+});
 
 $("#submit").on("click", function(event) {
   $("#submit-msg").empty();
@@ -126,6 +133,19 @@ $("#submit-shoes").on("click", function(event) {
   $("#shoes-submit-div").append(newDiv);
   emptyShoesValue();
 });
+
+$('select[name="dropdown"]').change(function(){
+  var gender = $("#")
+  if ($(this).val() == "1"){
+      $.get("/api/shirt", function(data) {
+        console.log(data)
+      });
+    } else if ($(this).val() == "2"){
+      $.get("/api/shirt")
+    }else if ($(this).val() == "3"){
+      $.get("/api/shirt")
+    }
+});​
 
 function emptyShirtValue() {
   $("#q1").val("");
