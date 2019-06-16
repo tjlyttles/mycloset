@@ -12,7 +12,7 @@ module.exports = function(app) {
 
   app.get("/userhome/mens-shirts", function(req, res) {
     db.Shirt.findOne({ where: { suitedFor: men } }).then(function(dbShirt) {
-      res.render("userhome", {
+      res.render("example", {
         shirt: dbShirt
       });
     });
