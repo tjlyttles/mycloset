@@ -70,7 +70,7 @@ $(document).on("click", "button.shoes-edit", editShoes);
 var sizeChange = null
 $("#update-submit").on("click", function(event){
     event.preventDefault();
-    sizeChange =  $("#q1").val();
+    sizeChange =  $("#change-price").val();
     console.log(sizeChange)
 })
 function editShirts() {
