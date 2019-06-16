@@ -11,7 +11,7 @@ module.exports = function(app) {
   });
 
   app.get("/userhome/mens-shirts", function(req, res) {
-    db.Shirt.findOne({ where: { suitedFor: men } }).then(function(dbShirt) {
+    db.Shirt.findOne({ where: { suitedFor: male } }).then(function(dbShirt) {
       res.render("userhome", {
         shirt: dbShirt
       });
@@ -30,9 +30,9 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/items", function(req, res) {
-    res.render("example");
-  });
+  // app.get("/items", function(req, res) {
+  //   res.render("example");
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
