@@ -22,6 +22,7 @@ $(document).ready(function() {
 function submitForm() {
   $("#img-url").submit();
 }
+
 $(document).ready(function() {
   $(".carousel").carousel();
 
@@ -73,8 +74,8 @@ $("#submit-pants").on("click", function(event) {
       .val()
       .trim(),
     condition: $("#pq4").val(),
-    suitedFor: $("#pq5").val(),
-    userFile: $("#pants-img-url").val()
+    suitedFor: $("#pq5").val()
+    //userFile: $("#pants-img-url").val()
   };
   console.log(newPants);
   $.post("/api/pants", newPants).then(function(data) {
@@ -105,8 +106,8 @@ $("#submit-dress").on("click", function(event) {
     condition: $("#dq4")
       .val()
       .trim(),
-    suitedFor: $("#dq5").val(),
-    userFile: $("#dress-img-url").val()
+    suitedFor: $("#dq5").val()
+    //userFile: $("#dress-img-url").val()
   };
   console.log(newDress);
 
@@ -130,8 +131,8 @@ $("#submit-shoes").on("click", function(event) {
       .val()
       .trim(),
     condition: $("#sq4").val(),
-    suitedFor: $("#sq5").val(),
-    userFile: $("#shoes-img-url").val()
+    suitedFor: $("#sq5").val()
+    //userFile: $("#shoes-img-url").val()
   };
   console.log(newShoes);
   $.post("/api/shoes", newShoes).then(function(data) {
