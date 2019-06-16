@@ -67,7 +67,27 @@ $(document).on("click", "button.pants-edit", editPants);
 $(document).on("click", "button.dresses-edit", editDresses);
 $(document).on("click", "button.shoes-edit", editShoes);
 
+var sizeChange = null
+$("#update-submit").on("click", function(event){
+    event.preventDefault();
+    sizeChange =  $("#q1").val();
+    console.log(sizeChange)
+})
 function editShirts() {
+    var shirtId = $(this).data("id")
+    $("#modal2").modal("open")
+    // var updateShirt = {
+    //     size: sizeChange
+    // }
+    $.ajax("/api/shirt/" + shirtId, {
+        type: "PUT",
+        data: shirtId,
+        //size: sizeChange
+    }).then(
+        function() {
+            location.reload();
+        }
+    )
     console.log("edit shirt")
 }
 function editPants() {
@@ -106,7 +126,7 @@ function editShoes() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${shirtArr[i].suitedFor}</p>
             <p>Type: ${shirtArr[i].type}</p>
-            <button type="button" value="submit" class="shirt-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            <button type="button" value="submit" class="shirt-edit waves-effect waves-light btn yellow darken-2" data-id=${shirtArr[i].id}> Edit </button>
             
             <button type="button" value="submit" class="delete waves-effect waves-light btn yellow darken-2" data-id=${shirtArr[i].id}> Delete </button>
             </div>

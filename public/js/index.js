@@ -30,6 +30,10 @@ $(document).ready(function() {
   setInterval(function() {
     $(".carousel").carousel("next");
   }, 5000);
+
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
 });
 
 $("#submit").on("click", function(event) {
