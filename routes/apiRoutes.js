@@ -29,7 +29,7 @@ module.exports = function(app) {
           db.Pants.findAll({}).then(function(dbPants) {
             allItemsObj.pants = dbPants;
             res.json(allItemsObj);
-            console.log(allItemsObj);
+            //console.log(allItemsObj);
           });
         });
       });
@@ -48,6 +48,24 @@ module.exports = function(app) {
       res.json(dbShirt);
     });
   });
+
+  // app.put("/api/shirt", function(req, res) {
+  //   db.Shirt.update(req.body).then(function(dbShirt) {
+  //     res.json(dbShirt);
+  //   });
+  // });
+  app.put("/api/shirt", function(req, res) {
+    db.Shirt.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbShirt) {
+      res.json(dbShirt);
+    });
+  });
+
 
   // Delete an example by id
   app.delete("/api/shirt/:id", function(req, res) {

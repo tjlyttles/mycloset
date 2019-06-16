@@ -12,6 +12,16 @@ $(document).ready(function() {
   $("select").formSelect();
   $(".collapsible").collapsible();
   $(".sidenav").sidenav();
+
+  $(".carousel").carousel();
+
+  setInterval(function() {
+    $(".carousel").carousel("next");
+  }, 5000);
+
+  $(".carousel.carousel-slider").carousel({
+    fullWidth: true
+  });
   // $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
   //   console.log(res);
   // });
@@ -21,14 +31,6 @@ $(document).ready(function() {
 function submitForm() {
   $("#img-url").submit();
 }
-
-$(document).ready(function() {
-  $(".carousel").carousel();
-
-  setInterval(function() {
-    $(".carousel").carousel("next");
-  }, 5000);
-});
 
 $("#submit").on("click", function(event) {
   $("#submit-msg").empty();
