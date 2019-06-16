@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    $(".parallax").parallax();
+    $(".modal").modal();
+    $(".dropdown-trigger").dropdown();
+    $("select").formSelect();
+    $(".collapsible").collapsible();
+    $(".sidenav").sidenav();
   $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
     console.log(res);
     var shirtArr = res.shirts;
@@ -25,6 +31,9 @@ $(document).ready(function() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${shirtArr[i].suitedFor}</p>
             <p>Type: ${shirtArr[i].type}</p>
+            <button class="shirt-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            
+            <button class="shirt-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
             </div>
             </div>`)
         console.log(shirtArr[i].color)
@@ -51,6 +60,9 @@ $(document).ready(function() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${pantsArr[k].suitedFor}</p>
             <p>Type: ${pantsArr[k].type}</p>
+            <button class="pants-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            
+            <button class="pants-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
             </div>
             </div>`)
         console.log(pantsArr[k].color)
@@ -77,6 +89,9 @@ $(document).ready(function() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${dressesArr[m].suitedFor}</p>
             <p>Type: ${dressesArr[m].type}</p>
+            <button class="dresses-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            
+            <button class="dresses-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
             </div>
             </div>`)
         console.log(dressesArr[m].color)
@@ -103,6 +118,9 @@ $(document).ready(function() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${shoesArr[j].suitedFor}</p>
             <p>Type: ${shoesArr[j].type}</p>
+            <button class="shoes-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            
+            <button class="shoes-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
             </div>
             </div>`)
         console.log(shoesArr[j].color)
@@ -111,14 +129,3 @@ $(document).ready(function() {
     $("#shoes-result").html(shoesReturned);
    });
 });
-$(document).ready(function() {
-    $(".parallax").parallax();
-    $(".modal").modal();
-    $(".dropdown-trigger").dropdown();
-    $("select").formSelect();
-    $(".collapsible").collapsible();
-    $(".sidenav").sidenav();
-    // $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
-    //   console.log(res);
-    // });
-  });
