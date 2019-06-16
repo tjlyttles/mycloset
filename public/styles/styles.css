@@ -49,7 +49,11 @@ h1 {
 
 #shirt-price-label, #shoes-price-label, #pants-price-label,#dress-price-label {
   font-size: 1.4em;
-} 
+}
+
+.shirt-delete, .pants-delete, .shoes-delete, .dresses-delete {
+  margin-top: 5px;
+}
 
 #submit-msg {
   margin-top: 10px;
