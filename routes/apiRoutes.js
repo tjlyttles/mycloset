@@ -124,7 +124,7 @@ module.exports = function(app) {
         return res.send(err)
       }
       console.log('file uploaded to server')
-      console.log(req)
+      //console.log(req)
       //console.log(clothesItem)
       
   
