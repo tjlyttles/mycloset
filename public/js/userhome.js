@@ -6,22 +6,58 @@ $(document).ready(function() {
     $(".collapsible").collapsible();
     $(".sidenav").sidenav();
 
-$(document).on("click", "button.delete", deleteTest);
+$(document).on("click", "button.delete", deleteShirt);
 $(document).on("click", "button.pants-delete", deletePants);
-$(document).on("click", "button.dresses-delete", deleteTest3);
-$(document).on("click", "button.shoes-delete", deleteTest4);
+$(document).on("click", "button.dresses-delete", deleteDress);
+$(document).on("click", "button.shoes-delete", deleteShoes);
 
-function deleteTest() {
-    console.log("this is a test")
+function deleteShirt() {
+    var shirtId = $(this).data("id")
+    console.log(shirtId)
+    $.ajax("/api/shirt/" + shirtId, {
+        type: "DELETE",
+        data: shirtId
+    }).then(
+        function() {
+            location.reload();
+        }
+    )
 }
 function deletePants() {
-    console.log("deleting pants")
+    var pantsId = $(this).data("id")
+    console.log(pantsId)
+    $.ajax("/api/pants/" + pantsId, {
+        type: "DELETE",
+        data: pantsId
+    }).then(
+        function() {
+            location.reload();
+        }
+    )
 }
-function deleteTest3() {
-    console.log("deleting dress")
+function deleteDress() {
+    var dressId = $(this).data("id")
+    console.log(dressId)
+    $.ajax("/api/dress/" + dressId, {
+        type: "DELETE",
+        data: dressId
+    }).then(
+        function() {
+            location.reload();
+        }
+    )
 }
-function deleteTest4() {
-    console.log("deleting shoes")
+function deleteShoes() {
+    var shoesId = $(this).data("id")
+    console.log(shoesId)
+    $.ajax("/api/shoes/" + shoesId, {
+        type: "DELETE",
+        data: shoesId
+    }).then(
+        function() {
+            location.reload();
+        }
+    )
 }
 
 
@@ -75,7 +111,7 @@ function editShoes() {
             <button type="button" value="submit" class="delete waves-effect waves-light btn yellow darken-2" data-id=${shirtArr[i].id}> Delete </button>
             </div>
             </div>`)
-        console.log(shirtArr[i].id)
+       // console.log(shirtArr[i].id)
         shirtsReturned.append(shirtCard)
     }
     $("#search-result").html(shirtsReturned);
@@ -102,10 +138,10 @@ function editShoes() {
             <p>Type: ${pantsArr[k].type}</p>
             <button type="button" value="submit" class="pants-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
             
-            <button type="button" value="submit" class="pants-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
+            <button type="button" value="submit" class="pants-delete waves-effect waves-light btn yellow darken-2" data-id=${pantsArr[k].id}> Delete </button>
             </div>
             </div>`)
-        console.log(pantsArr[k].color)
+        //console.log(pantsArr[k].color)
         pantsReturned.append(pantsCard)
     }
     $("#pants-result").html(pantsReturned);
@@ -129,12 +165,13 @@ function editShoes() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${dressesArr[m].suitedFor}</p>
             <p>Type: ${dressesArr[m].type}</p>
-            <button type="button" value="submit" class="dresses-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            <button type="button" value="submit" class="dresses-edit waves-effect waves-light btn yellow darken-2" > Edit </button>
             
-            <button type="button" value="submit" class="dresses-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
+            <button type="button" value="submit" class="dresses-delete waves-effect waves-light btn yellow darken-2" data-id=${dressesArr[m].id}> Delete </button>
             </div>
             </div>`)
-        console.log(dressesArr[m].color)
+        //console.log(dressesArr[m].color)
+       // console.log(dressesArr[m].id)
         dressesReturned.append(dressesCard)
     }
     $("#dresses-result").html(dressesReturned);
@@ -158,12 +195,12 @@ function editShoes() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${shoesArr[j].suitedFor}</p>
             <p>Type: ${shoesArr[j].type}</p>
-            <button type="button" value="submit" class="shoes-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            <button type="button" value="submit" class="shoes-edit waves-effect waves-light btn yellow darken-2" > Edit </button>
             
-            <button type="button" value="submit" class="shoes-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
+            <button type="button" value="submit" class="shoes-delete waves-effect waves-light btn yellow darken-2" data-id=${shoesArr[j].id}> Delete </button>
             </div>
             </div>`)
-        console.log(shoesArr[j].color)
+        //console.log(shoesArr[j].color)
         shoesReturned.append(shoesCard)
     }
     $("#shoes-result").html(shoesReturned);

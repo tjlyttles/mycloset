@@ -29,7 +29,7 @@ module.exports = function(app) {
           db.Pants.findAll({}).then(function(dbPants) {
             allItemsObj.pants = dbPants;
             res.json(allItemsObj);
-            console.log(allItemsObj);
+            //console.log(allItemsObj);
           });
         });
       });
