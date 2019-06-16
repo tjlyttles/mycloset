@@ -60,34 +60,32 @@ function deleteShoes() {
     )
 }
 
-
-
 $(document).on("click", "button.shirt-edit", editShirts);
 $(document).on("click", "button.pants-edit", editPants);
 $(document).on("click", "button.dresses-edit", editDresses);
 $(document).on("click", "button.shoes-edit", editShoes);
 
-var sizeChange = null
+var priceChange = null
 $("#update-submit").on("click", function(event){
     event.preventDefault();
-    sizeChange =  $("#change-price").val();
-    console.log(sizeChange)
+    priceChange =  $("#change-price").val();
+    console.log(priceChange)
 })
 function editShirts() {
-    var shirtId = $(this).data("id")
+    var changeShirtId = $(this).data("id")
     $("#modal2").modal("open")
-    // var updateShirt = {
-    //     size: sizeChange
-    // }
-    $.ajax("/api/shirt/" + shirtId, {
+    var updateShirtPrice = {
+        price: priceChange
+    };
+    $.ajax("/api/shirt/" + changeShirtId, {
         type: "PUT",
-        data: shirtId,
-        //size: sizeChange
+        data: updateShirtPrice,
     }).then(
         function() {
             location.reload();
         }
     )
+    console.log("new size:" + priceChange)
     console.log("edit shirt")
 }
 function editPants() {
