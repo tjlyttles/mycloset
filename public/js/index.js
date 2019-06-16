@@ -34,6 +34,7 @@ $("#submit").on("click", function(event) {
   $("#submit-msg").empty();
   event.preventDefault();
   submitForm();
+  var uniqueFilename = new Date().toISOString();
   var newItem = {};
   newItem = {
     size: $("#q1")
@@ -51,7 +52,10 @@ $("#submit").on("click", function(event) {
     condition: $("#q4")
       .val()
       .trim(),
-    suitedFor: $("#q5").val()
+    suitedFor: $("#q5").val(),
+    imgLink:
+      "http://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
+      uniqueFilename
   };
   console.log(newItem);
   $.post("/api/shirt", newItem).then(function(data) {

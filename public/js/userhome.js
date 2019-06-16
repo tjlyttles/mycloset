@@ -5,6 +5,9 @@ $(document).ready(function() {
     $("select").formSelect();
     $(".collapsible").collapsible();
     $(".sidenav").sidenav();
+    $(".delete").on("click", function(){
+        console.log("yo")
+        })
   $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
     console.log(res);
     var shirtArr = res.shirts;
@@ -17,7 +20,7 @@ $(document).ready(function() {
         var shirtCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="https://placekitten.com/200/300">
+            <img class="activator" src=${shirtArr[i].imgLink}>
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -31,9 +34,9 @@ $(document).ready(function() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${shirtArr[i].suitedFor}</p>
             <p>Type: ${shirtArr[i].type}</p>
-            <button class="shirt-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            <button class="shirt-edit waves-effect waves-light btn yellow darken-2" type="button"> Edit </button>
             
-            <button class="shirt-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
+            <button class="delete waves-effect waves-light btn yellow darken-2" type="button" value="submit"> Delete </button>
             </div>
             </div>`)
         console.log(shirtArr[i].color)
@@ -128,4 +131,7 @@ $(document).ready(function() {
     }
     $("#shoes-result").html(shoesReturned);
    });
+   
 });
+
+

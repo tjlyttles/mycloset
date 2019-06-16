@@ -5,18 +5,15 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.STRING,
     price: DataTypes.DECIMAL(2),
     condition: DataTypes.STRING,
-    suitedFor: DataTypes.STRING
-    //userFile: DataTypes.STRING
+    suitedFor: DataTypes.STRING,
+    imgLink: DataTypes.STRING
   });
-  Shirt.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Shirt.belongsTo(models.Url, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-
+  // Shirt.associate = function(models) {
+  //   // Associating Author with Posts
+  //   // When an Author is deleted, also delete any associated Posts
+  //   Shirt.HasOne(models.Url, {
+  //     onDelete: "cascade"
+  //   });
+  // };
   return Shirt;
 };

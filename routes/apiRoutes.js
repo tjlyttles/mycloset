@@ -144,13 +144,11 @@ module.exports = function(app) {
           
           if (err) return res.send(err)
           console.log('Cloudinary upload response:', image)
+          
           // Now you want to insert the new clothing item,
           // along with the image url from image.secure_url
-          db.Url.create({
-            imgUrl: image.secure_url
-          }).then(function(dbUrl) {
-            //res.json(dbUrl);
-          });
+          
+          
           // remove file from server
           fs.unlinkSync(path)
           // return image details
@@ -158,5 +156,5 @@ module.exports = function(app) {
         }
       )
     })
-  })
+  });
 };
