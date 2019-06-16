@@ -19,6 +19,7 @@ $(document).ready(function() {
   // });
 });
 
+// eslint-disable-next-line no-unused-vars
 function submitForm() {
   $("#img-url").submit();
 }
@@ -34,6 +35,7 @@ $(document).ready(function() {
 $("#submit").on("click", function(event) {
   $("#submit-msg").empty();
   event.preventDefault();
+  submitForm();
   var newItem = {};
   newItem = {
     size: $("#q1")
