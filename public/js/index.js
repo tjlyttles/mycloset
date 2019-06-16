@@ -5,6 +5,7 @@ newDiv.setAttribute("id", "submit-msg");
 
 // });
 
+
 $(document).ready(function() {
   $(".parallax").parallax();
   $(".modal").modal();
@@ -18,6 +19,9 @@ $(document).ready(function() {
   // });
 });
 
+function submitForm() {
+  $("#img-url").submit();
+}
 $(document).ready(function() {
   $(".carousel").carousel();
 
@@ -46,12 +50,11 @@ $("#submit").on("click", function(event) {
     condition: $("#q4")
       .val()
       .trim(),
-    suitedFor: $("#q5").val(),
-    userFile: $("#img-url").val()
+    suitedFor: $("#q5").val()
   };
   console.log(newItem);
   $.post("/api/shirt", newItem).then(function(data) {
-    console.log(data);
+    console.log("this" + data);
   });
   newDiv.append(submitMsg);
   $("#submit-div").append(newDiv);
