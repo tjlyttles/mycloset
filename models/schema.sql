@@ -1,3 +1,4 @@
 DROP DATABASE IF EXISTS closetdb;
 CREATE DATABASE closetdb;
 SELECT * FROM shirts;
+SELECT * FROM urls;
