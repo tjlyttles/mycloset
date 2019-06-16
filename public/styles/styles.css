@@ -90,7 +90,7 @@ footer {
   height: 244.84px
 }
 .foot-bottom {
-  margin-top: 150px;
+  margin-top: 30px;
 }
 
 .activator {
@@ -101,4 +101,13 @@ footer {
   max-width: 160px;
   float: left;
   margin: 10px;
+}
+
+.fa-github {
+  font-size: 1.3em;
+  margin-right: 5px;
+  color: white;
+}
+.git-text{
+  color: white;
 }
