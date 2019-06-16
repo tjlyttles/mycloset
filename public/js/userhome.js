@@ -6,6 +6,51 @@ $(document).ready(function() {
     $(".collapsible").collapsible();
     $(".sidenav").sidenav();
 
+$(document).on("click", "a.menShirtsAnchor", displayShirts);
+$(document).on("click", "a.womenShirtsAnchor", displayShirts);
+$(document).on("click", "a.menPantsAnchor", displayPants);
+$(document).on("click", "a.womenPantsAnchor", displayPants)
+$(document).on("click", "a.menShoesAnchor",displayShoes);
+$(document).on("click", "a.womenShoesAnchor",displayShoes);
+$(document).on("click", "a.womenDressAnchor", displayDresses);
+
+function displayShirts() {
+document.getElementById("pants-result").style.display = "none"
+document.getElementById("dresses-result").style.display = "none"
+document.getElementById("shoes-result").style.display = "none"
+document.getElementById("search-result").style.display = "block"
+    console.log("display shirts")
+}
+
+function displayPants() {
+document.getElementById("search-result").style.display = "none"
+document.getElementById("dresses-result").style.display = "none"
+document.getElementById("shoes-result").style.display = "none"
+document.getElementById("pants-result").style.display = "block"
+    console.log("display pants")
+}
+
+function displayShoes() {
+document.getElementById("search-result").style.display = "none"
+document.getElementById("dresses-result").style.display = "none"
+document.getElementById("pants-result").style.display = "none"
+document.getElementById("shoes-result").style.display = "block"
+    console.log("display shoes")
+}
+
+function displayDresses() {
+document.getElementById("search-result").style.display = "none"
+document.getElementById("dresses-result").style.display = "block"
+document.getElementById("pants-result").style.display = "none"
+document.getElementById("shoes-result").style.display = "none"
+    console.log("display dresses")
+}
+
+// $("#menShirts").on("click", function(event){
+//     event.preventDefault();
+//     console.log("men's shirts")
+// })
+
 $(document).on("click", "button.delete", deleteShirt);
 $(document).on("click", "button.pants-delete", deletePants);
 $(document).on("click", "button.dresses-delete", deleteDress);

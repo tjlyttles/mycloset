@@ -10,9 +10,9 @@ module.exports = function(app) {
     res.render("userhome");
   });
 
-  app.get("/userhome/mens-shirts", function(req, res) {
+  app.get("/mens-shirts", function(req, res) {
     db.Shirt.findOne({ where: { suitedFor: male } }).then(function(dbShirt) {
-      res.render("userhome", {
+      res.render("mens-shirts", {
         shirt: dbShirt
       });
     });

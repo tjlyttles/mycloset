@@ -97,10 +97,24 @@ footer {
   max-width: 160px;
 }
 
+#pants-result, #dresses-result, #shoes-result {
+  /* //max-width: 160px; */
+  float: left;
+}
+
 .card {
   max-width: 160px;
   float: left;
   margin: 10px;
+}
+
+/* #search-result {
+  margin: 10px;
+} */
+
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .fa-github {
