@@ -69,7 +69,7 @@ var priceChange = null
 $("#update-submit").on("click", function(event){
     event.preventDefault();
     priceChange =  $("#change-price").val();
-    console.log(priceChange)
+    //console.log(priceChange)
 })
 function editShirts() {
     var changeShirtId = $(this).data("id")
@@ -80,13 +80,13 @@ function editShirts() {
     $.ajax("/api/shirt/" + changeShirtId, {
         type: "PUT",
         data: updateShirtPrice,
-    }).then(
-        function() {
-            location.reload();
-        }
-    )
-    console.log("new size:" + priceChange)
-    console.log("edit shirt")
+    })
+    // .then(
+    //     function() {
+    //         location.reload();
+    //     }
+    // )
+    console.log("new price:" + priceChange)
 }
 function editPants() {
     console.log("edit pants")
