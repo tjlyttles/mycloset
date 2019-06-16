@@ -4,8 +4,6 @@ newDiv.setAttribute("id", "submit-msg");
 // $(document).ready(function() {
 
 // });
-
-
 $(document).ready(function() {
   $(".parallax").parallax();
   $(".modal").modal();
