@@ -117,7 +117,7 @@ function editShoes() {
             </div>
             <div class="card-content">
             <span class="card-title activator">Shirt</span>
-            <p>Price: ${shirtArr[i].price}</p>
+            <p>Price: $${shirtArr[i].price}</p>
             <p>Condition: ${shirtArr[i].condition}</p>
             <p>Size: ${shirtArr[i].size}</p>
             </div>
@@ -147,7 +147,7 @@ function editShoes() {
             </div>
             <div class="card-content">
             <span class="card-title activator">Pants</span>
-            <p>Price: ${pantsArr[k].price}</p>
+            <p>Price: $${pantsArr[k].price}</p>
             <p>Condition: ${pantsArr[k].condition}</p>
             <p>Size: ${pantsArr[k].size}</p>
             </div>
@@ -176,7 +176,7 @@ function editShoes() {
             </div>
             <div class="card-content">
             <span class="card-title activator">Dress</span>
-            <p>Price: ${dressesArr[m].price}</p>
+            <p>Price: $${dressesArr[m].price}</p>
             <p>Condition: ${dressesArr[m].condition}</p>
             <p>Size: ${dressesArr[m].size}</p>
             </div>
@@ -206,7 +206,7 @@ function editShoes() {
             </div>
             <div class="card-content">
             <span class="card-title activator">Shoe</span>
-            <p>Price: ${shoesArr[j].price}</p>
+            <p>Price: $${shoesArr[j].price}</p>
             <p>Condition: ${shoesArr[j].condition}</p>
             <p>Size: ${shoesArr[j].size}</p>
             </div>
