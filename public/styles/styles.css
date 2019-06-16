@@ -51,7 +51,7 @@ h1 {
   font-size: 1.4em;
 }
 
-.shirt-delete, .pants-delete, .shoes-delete, .dresses-delete {
+.delete, .shirt-delete, .pants-delete, .shoes-delete, .dresses-delete {
   margin-top: 5px;
 }
 

@@ -5,6 +5,45 @@ $(document).ready(function() {
     $("select").formSelect();
     $(".collapsible").collapsible();
     $(".sidenav").sidenav();
+
+$(document).on("click", "button.delete", deleteTest);
+$(document).on("click", "button.pants-delete", deletePants);
+$(document).on("click", "button.dresses-delete", deleteTest3);
+$(document).on("click", "button.shoes-delete", deleteTest4);
+
+function deleteTest() {
+    console.log("this is a test")
+}
+function deletePants() {
+    console.log("deleting pants")
+}
+function deleteTest3() {
+    console.log("deleting dress")
+}
+function deleteTest4() {
+    console.log("deleting shoes")
+}
+
+
+
+$(document).on("click", "button.shirt-edit", editShirts);
+$(document).on("click", "button.pants-edit", editPants);
+$(document).on("click", "button.dresses-edit", editDresses);
+$(document).on("click", "button.shoes-edit", editShoes);
+
+function editShirts() {
+    console.log("edit shirt")
+}
+function editPants() {
+    console.log("edit pants")
+}
+function editDresses() {
+    console.log("edit dress")
+}
+function editShoes() {
+    console.log("edit shoes")
+}
+
   $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
     console.log(res);
     var shirtArr = res.shirts;
@@ -31,15 +70,16 @@ $(document).ready(function() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${shirtArr[i].suitedFor}</p>
             <p>Type: ${shirtArr[i].type}</p>
-            <button class="shirt-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            <button type="button" value="submit" class="shirt-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
             
-            <button class="shirt-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
+            <button type="button" value="submit" class="delete waves-effect waves-light btn yellow darken-2" data-id=${shirtArr[i].id}> Delete </button>
             </div>
             </div>`)
-        console.log(shirtArr[i].color)
+        console.log(shirtArr[i].id)
         shirtsReturned.append(shirtCard)
     }
     $("#search-result").html(shirtsReturned);
+
 
     var pantsReturned = $("<div>")
     for (let k = 0; k < pantsArr.length; k++) {
@@ -60,9 +100,9 @@ $(document).ready(function() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${pantsArr[k].suitedFor}</p>
             <p>Type: ${pantsArr[k].type}</p>
-            <button class="pants-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            <button type="button" value="submit" class="pants-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
             
-            <button class="pants-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
+            <button type="button" value="submit" class="pants-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
             </div>
             </div>`)
         console.log(pantsArr[k].color)
@@ -79,7 +119,7 @@ $(document).ready(function() {
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
-            <span class="card-title activator">Dresse</span>
+            <span class="card-title activator">Dress</span>
             <p>Price: ${dressesArr[m].price}</p>
             <p>Condition: ${dressesArr[m].condition}</p>
             <p>Size: ${dressesArr[m].size}</p>
@@ -89,9 +129,9 @@ $(document).ready(function() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${dressesArr[m].suitedFor}</p>
             <p>Type: ${dressesArr[m].type}</p>
-            <button class="dresses-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            <button type="button" value="submit" class="dresses-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
             
-            <button class="dresses-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
+            <button type="button" value="submit" class="dresses-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
             </div>
             </div>`)
         console.log(dressesArr[m].color)
@@ -118,9 +158,9 @@ $(document).ready(function() {
             <span class="card-title grey-text text-darken-4">More Info<i class="material-icons right">close</i></span>
             <p>Suited For: ${shoesArr[j].suitedFor}</p>
             <p>Type: ${shoesArr[j].type}</p>
-            <button class="shoes-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
+            <button type="button" value="submit" class="shoes-edit waves-effect waves-light btn yellow darken-2"> Edit </button>
             
-            <button class="shoes-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
+            <button type="button" value="submit" class="shoes-delete waves-effect waves-light btn yellow darken-2"> Delete </button>
             </div>
             </div>`)
         console.log(shoesArr[j].color)
