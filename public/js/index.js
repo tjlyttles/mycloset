@@ -1,9 +1,7 @@
 var newDiv = document.createElement("div");
 var submitMsg = "Your item has been added!";
 newDiv.setAttribute("id", "submit-msg");
-// $(document).ready(function() {
 
-// });
 $(document).ready(function() {
   $(".parallax").parallax();
   $(".modal").modal();
@@ -22,9 +20,6 @@ $(document).ready(function() {
   $(".carousel.carousel-slider").carousel({
     fullWidth: true
   });
-  // $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
-  //   console.log(res);
-  // });
 });
 
 // eslint-disable-next-line no-unused-vars

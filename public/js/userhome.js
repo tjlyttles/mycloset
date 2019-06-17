@@ -19,7 +19,7 @@ document.getElementById("pants-result").style.display = "none"
 document.getElementById("dresses-result").style.display = "none"
 document.getElementById("shoes-result").style.display = "none"
 document.getElementById("search-result").style.display = "block"
-    console.log("display shirts")
+console.log("display shirts")
 }
 
 function displayPants() {
@@ -27,7 +27,7 @@ document.getElementById("search-result").style.display = "none"
 document.getElementById("dresses-result").style.display = "none"
 document.getElementById("shoes-result").style.display = "none"
 document.getElementById("pants-result").style.display = "block"
-    console.log("display pants")
+console.log("display pants")
 }
 
 function displayShoes() {
@@ -35,7 +35,7 @@ document.getElementById("search-result").style.display = "none"
 document.getElementById("dresses-result").style.display = "none"
 document.getElementById("pants-result").style.display = "none"
 document.getElementById("shoes-result").style.display = "block"
-    console.log("display shoes")
+console.log("display shoes")
 }
 
 function displayDresses() {
@@ -43,7 +43,7 @@ document.getElementById("search-result").style.display = "none"
 document.getElementById("dresses-result").style.display = "block"
 document.getElementById("pants-result").style.display = "none"
 document.getElementById("shoes-result").style.display = "none"
-    console.log("display dresses")
+console.log("display dresses")
 }
 
 // $("#menShirts").on("click", function(event){
@@ -143,7 +143,7 @@ function editShoes() {
     console.log("edit shoes")
 }
 
-  $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
+$.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
     console.log(res);
     var shirtArr = res.shirts;
     var shoesArr = res.shoes;
@@ -267,5 +267,5 @@ function editShoes() {
         shoesReturned.append(shoesCard)
     }
     $("#shoes-result").html(shoesReturned);
-   });
+});
 });

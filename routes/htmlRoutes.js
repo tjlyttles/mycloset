@@ -10,14 +10,6 @@ module.exports = function(app) {
     res.render("userhome");
   });
 
-  app.get("/mens-shirts", function(req, res) {
-    db.Shirt.findOne({ where: { suitedFor: male } }).then(function(dbShirt) {
-      res.render("mens-shirts", {
-        shirt: dbShirt
-      });
-    });
-  });
-
   app.get("/additems", function(req, res) {
     res.render("additems");
   });
