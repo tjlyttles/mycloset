@@ -52,21 +52,22 @@ module.exports = function(app) {
     });
   });
 
-  // app.put("/api/shirt", function(req, res) {
-  //   db.Shirt.update(req.body).then(function(dbShirt) {
-  //     res.json(dbShirt);
-  //   });
-  // });
-  app.put("/api/shirt", function(req, res) {
-    db.Shirt.update(
-      req.body,
-      {
+  app.put("/api/shirt/:id", function(req, res) {
+    console.log(req.body)
+    //console.log(req.body.price)
+    db.Shirt.update({
+      price: req.body.price,
+    },{
         where: {
-          id: req.body.id
+          id: req.params.id
         }
-      }).then(function(dbShirt) {
-      res.json(dbShirt);
-    });
+      })
+      .then(function(dbShirt) {
+          res.json(dbShirt);
+    })
+      .catch(function(err){
+        res.json(err)
+      });
   });
 
 

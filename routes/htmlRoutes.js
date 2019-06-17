@@ -10,14 +10,6 @@ module.exports = function(app) {
     res.render("userhome");
   });
 
-  app.get("/userhome/mens-shirts", function(req, res) {
-    db.Shirt.findOne({ where: { suitedFor: men } }).then(function(dbShirt) {
-      res.render("example", {
-        shirt: dbShirt
-      });
-    });
-  });
-
   app.get("/additems", function(req, res) {
     res.render("additems");
   });
@@ -30,9 +22,9 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/items", function(req, res) {
-    res.render("example");
-  });
+  // app.get("/items", function(req, res) {
+  //   res.render("example");
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
