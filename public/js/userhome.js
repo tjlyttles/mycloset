@@ -140,7 +140,7 @@ function editShoes() {
         var pantsCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="https://placekitten.com/200/300">
+            <img class="activator" src=${pantsArr[i].imgLink}>
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -169,7 +169,7 @@ function editShoes() {
         var dressesCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="https://placekitten.com/200/300">
+            <img class="activator" src=${dressesArr[i].imgLink}>
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -199,7 +199,7 @@ function editShoes() {
         var shoesCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="https://placekitten.com/200/300">
+            <img class="activator" src=${shoesArr[i].imgLink}>
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">

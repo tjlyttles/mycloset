@@ -1,6 +1,8 @@
 var newDiv = document.createElement("div");
 var submitMsg = "Your item has been added!";
 newDiv.setAttribute("id", "submit-msg");
+var uniqueFilename = new Date().toISOString();
+
 // $(document).ready(function() {
 
 // });
@@ -35,8 +37,6 @@ function submitForm() {
 $("#submit").on("click", function(event) {
   $("#submit-msg").empty();
   event.preventDefault();
-  submitForm();
-  var uniqueFilename = new Date().toISOString();
   var newItem = {};
   newItem = {
     size: $("#q1")
@@ -57,12 +57,14 @@ $("#submit").on("click", function(event) {
     suitedFor: $("#q5").val(),
     imgLink:
       "http://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
-      uniqueFilename
+      uniqueFilename +
+      ".jpg"
   };
   console.log(newItem);
   $.post("/api/shirt", newItem).then(function(data) {
     console.log("this" + data);
   });
+  submitForm();
   newDiv.append(submitMsg);
   $("#submit-div").append(newDiv);
   emptyShirtValue();
@@ -71,6 +73,7 @@ $("#submit").on("click", function(event) {
 $("#submit-pants").on("click", function(event) {
   $("#submit-msg").empty();
   event.preventDefault();
+  submitForm();
   var newPants = {};
   newPants = {
     size: $("#pq1").val(),
@@ -80,8 +83,11 @@ $("#submit-pants").on("click", function(event) {
       .val()
       .trim(),
     condition: $("#pq4").val(),
-    suitedFor: $("#pq5").val()
-    //userFile: $("#pants-img-url").val()
+    suitedFor: $("#pq5").val(),
+    imgLink:
+      "http://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
+      uniqueFilename +
+      ".jpg"
   };
   console.log(newPants);
   $.post("/api/pants", newPants).then(function(data) {
@@ -95,6 +101,7 @@ $("#submit-pants").on("click", function(event) {
 $("#submit-dress").on("click", function(event) {
   $("#submit-msg").empty();
   event.preventDefault();
+  submitForm();
   var newDress = {};
   newDress = {
     size: $("#dq1")
@@ -112,8 +119,11 @@ $("#submit-dress").on("click", function(event) {
     condition: $("#dq4")
       .val()
       .trim(),
-    suitedFor: $("#dq5").val()
-    //userFile: $("#dress-img-url").val()
+    suitedFor: $("#dq5").val(),
+    imgLink:
+      "http://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
+      uniqueFilename +
+      ".jpg"
   };
   console.log(newDress);
 
@@ -128,6 +138,7 @@ $("#submit-dress").on("click", function(event) {
 $("#submit-shoes").on("click", function(event) {
   $("#submit-msg").empty();
   event.preventDefault();
+  submitForm();
   var newShoes = {};
   newShoes = {
     size: $("#sq1").val(),
@@ -137,8 +148,11 @@ $("#submit-shoes").on("click", function(event) {
       .val()
       .trim(),
     condition: $("#sq4").val(),
-    suitedFor: $("#sq5").val()
-    //userFile: $("#shoes-img-url").val()
+    suitedFor: $("#sq5").val(),
+    imgLink:
+      "http://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
+      uniqueFilename +
+      ".jpg"
   };
   console.log(newShoes);
   $.post("/api/shoes", newShoes).then(function(data) {
@@ -156,7 +170,7 @@ function emptyShirtValue() {
   $("#shirt-price").val("");
   $("#q4").val("");
   $("#q5").val("");
-  $("#img-url").val("");
+  $("#shirt-img-url").val("");
   $("select").formSelect();
 }
 function emptyDressValue() {

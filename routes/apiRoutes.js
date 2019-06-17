@@ -2,7 +2,9 @@ var db = require("../models");
 var fs = require('fs')
 var cloudinary = require('cloudinary').v2
 var multer = require("multer");
-var path = require("path")
+var path = require("path");
+var uniqueFilename;
+
 
 //MULTER
 var storage = multer.diskStorage({
@@ -38,6 +40,7 @@ module.exports = function(app) {
 
   app.get("/api/shirt", function(req, res) {
     db.Shirt.findAll({}).then(function(dbShirt) {
+      console.log(dbShirt)
       res.json(dbShirt);
     });
   });
@@ -134,7 +137,7 @@ module.exports = function(app) {
     });
   });
   app.post("/api/upload", function(req, res) {
-    
+    //var  uniqueFilename = window.opener.uniqueFilename;
     var upload = multer({ storage }).single("file")
     
     upload(req, res, function(err) {
@@ -144,7 +147,7 @@ module.exports = function(app) {
       console.log('file uploaded to server')
       //console.log(req)
       //console.log(clothesItem)
-      
+  
   
       // SEND FILE TO CLOUDINARY
       cloudinary.config({
@@ -153,11 +156,10 @@ module.exports = function(app) {
         api_secret:	"4it0q392YHCOoUsFmidIetyizS4"
       })
       var path = req.file.path
-      var uniqueFilename = new Date().toISOString()
-  
+      
       cloudinary.uploader.upload(
         path,
-        { public_id: uniqueFilename },
+        { public_id: "uniqueFilename" },
         function(err, image) {
           
           if (err) return res.send(err)
@@ -169,6 +171,7 @@ module.exports = function(app) {
           
           // remove file from server
           fs.unlinkSync(path)
+          
           // return image details
           //res.json(image)
         }
