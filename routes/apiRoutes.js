@@ -49,7 +49,6 @@ module.exports = function(app) {
     });
   });
 
-
   app.put("/api/shirt/:id", function(req, res) {
     console.log(req.body)
     //console.log(req.body.price)
