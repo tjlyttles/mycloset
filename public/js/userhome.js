@@ -6,6 +6,51 @@ $(document).ready(function() {
     $(".collapsible").collapsible();
     $(".sidenav").sidenav();
 
+$(document).on("click", "a.menShirtsAnchor", displayShirts);
+$(document).on("click", "a.womenShirtsAnchor", displayShirts);
+$(document).on("click", "a.menPantsAnchor", displayPants);
+$(document).on("click", "a.womenPantsAnchor", displayPants)
+$(document).on("click", "a.menShoesAnchor",displayShoes);
+$(document).on("click", "a.womenShoesAnchor",displayShoes);
+$(document).on("click", "a.womenDressAnchor", displayDresses);
+
+function displayShirts() {
+document.getElementById("pants-result").style.display = "none"
+document.getElementById("dresses-result").style.display = "none"
+document.getElementById("shoes-result").style.display = "none"
+document.getElementById("search-result").style.display = "block"
+console.log("display shirts")
+}
+
+function displayPants() {
+document.getElementById("search-result").style.display = "none"
+document.getElementById("dresses-result").style.display = "none"
+document.getElementById("shoes-result").style.display = "none"
+document.getElementById("pants-result").style.display = "block"
+console.log("display pants")
+}
+
+function displayShoes() {
+document.getElementById("search-result").style.display = "none"
+document.getElementById("dresses-result").style.display = "none"
+document.getElementById("pants-result").style.display = "none"
+document.getElementById("shoes-result").style.display = "block"
+console.log("display shoes")
+}
+
+function displayDresses() {
+document.getElementById("search-result").style.display = "none"
+document.getElementById("dresses-result").style.display = "block"
+document.getElementById("pants-result").style.display = "none"
+document.getElementById("shoes-result").style.display = "none"
+console.log("display dresses")
+}
+
+// $("#menShirts").on("click", function(event){
+//     event.preventDefault();
+//     console.log("men's shirts")
+// })
+
 $(document).on("click", "button.delete", deleteShirt);
 $(document).on("click", "button.pants-delete", deletePants);
 $(document).on("click", "button.dresses-delete", deleteDress);
@@ -69,7 +114,7 @@ var priceChange = null
 $("#update-submit").on("click", function(event){
     event.preventDefault();
     priceChange =  $("#change-price").val();
-    console.log(priceChange)
+    //console.log(priceChange)
 })
 function editShirts() {
     var changeShirtId = $(this).data("id")
@@ -80,13 +125,13 @@ function editShirts() {
     $.ajax("/api/shirt/" + changeShirtId, {
         type: "PUT",
         data: updateShirtPrice,
-    }).then(
-        function() {
-            location.reload();
-        }
-    )
-    console.log("new size:" + priceChange)
-    console.log("edit shirt")
+    })
+    // .then(
+    //     function() {
+    //         location.reload();
+    //     }
+    // )
+    console.log("new price:" + priceChange)
 }
 function editPants() {
     console.log("edit pants")
@@ -98,7 +143,7 @@ function editShoes() {
     console.log("edit shoes")
 }
 
-  $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
+$.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
     console.log(res);
     var shirtArr = res.shirts;
     var shoesArr = res.shoes;
@@ -110,7 +155,7 @@ function editShoes() {
         var shirtCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="https://placekitten.com/200/300">
+            <img class="activator" src="/assets/images/redshirt.jpg">
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -140,7 +185,7 @@ function editShoes() {
         var pantsCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="https://placekitten.com/200/300">
+            <img class="activator" src="/assets/images/jeans-1.jpg">
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -169,7 +214,7 @@ function editShoes() {
         var dressesCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="https://placekitten.com/200/300">
+            <img class="activator" src="/assets/images/yellowdress.jpg">
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -199,7 +244,7 @@ function editShoes() {
         var shoesCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="https://placekitten.com/200/300">
+            <img class="activator" src="/assets/images/guccishoes.jpeg">
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -222,5 +267,5 @@ function editShoes() {
         shoesReturned.append(shoesCard)
     }
     $("#shoes-result").html(shoesReturned);
-   });
+});
 });
