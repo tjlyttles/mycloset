@@ -160,6 +160,7 @@ module.exports = function(app) {
         api_key: "417287116435888",
         api_secret:	"4it0q392YHCOoUsFmidIetyizS4"
       })
+      console.log(req.file)
       var path = req.file.path
       
       cloudinary.uploader.upload(

@@ -109,16 +109,34 @@ $(document).on("click", "button.shirt-edit", editShirts);
 $(document).on("click", "button.pants-edit", editPants);
 $(document).on("click", "button.dresses-edit", editDresses);
 $(document).on("click", "button.shoes-edit", editShoes);
-
+var changeShirtId;
 var priceChange = null
 $("#update-submit").on("click", function(event){
     event.preventDefault();
     priceChange =  $("#change-price").val();
+    var updateShirtPrice = {
+        price: priceChange
+    };
+    $.ajax("/api/shirt/" + changeShirtId, {
+        type: "PUT",
+        data: updateShirtPrice,
+    })
+    .then(
+        function() {
+            location.reload();
+        }
+    )
+    console.log("new price:" + priceChange)
     //console.log(priceChange)
 })
 function editShirts() {
-    var changeShirtId = $(this).data("id")
+    changeShirtId = $(this).data("id")
+    console.log(changeShirtId)
     $("#modal2").modal("open")
+    
+}
+$(".modal-close").on("click", function(event){
+    event.preventDefault();
     var updateShirtPrice = {
         price: priceChange
     };
@@ -132,7 +150,8 @@ function editShirts() {
     //     }
     // )
     console.log("new price:" + priceChange)
-}
+})
+
 function editPants() {
     console.log("edit pants")
 }
