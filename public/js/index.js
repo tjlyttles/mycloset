@@ -70,6 +70,7 @@ $("#submit-pants").on("click", function(event) {
   $("#submit-msg").empty();
   event.preventDefault();
   submitForm();
+  uniqueFilename = new Date().toISOString();
   var newPants = {};
   newPants = {
     size: $("#pq1").val(),

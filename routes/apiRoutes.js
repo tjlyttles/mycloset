@@ -3,7 +3,10 @@ var fs = require('fs')
 var cloudinary = require('cloudinary').v2
 var multer = require("multer");
 var path = require("path");
-var uniqueFilename;
+var uniqueFilename  = new Date().toISOString();
+var imageLink = "http://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
+uniqueFilename +
+".jpg"
 
 
 //MULTER
@@ -48,6 +51,7 @@ module.exports = function(app) {
   // Create a new example
   app.post("/api/shirt", function(req, res) {
     db.Shirt.create(req.body).then(function(dbShirt) {
+      
       res.json(dbShirt);
     });
   });
@@ -138,7 +142,7 @@ module.exports = function(app) {
     });
   });
   app.post("/api/upload", function(req, res) {
-    //var  uniqueFilename = window.opener.uniqueFilename;
+    
     var upload = multer({ storage }).single("file")
     
     upload(req, res, function(err) {
@@ -160,7 +164,7 @@ module.exports = function(app) {
       
       cloudinary.uploader.upload(
         path,
-        { public_id: "uniqueFilename" },
+        // { public_id: uniqueFilename },
         function(err, image) {
           
           if (err) return res.send(err)
