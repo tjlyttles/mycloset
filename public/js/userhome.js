@@ -109,16 +109,34 @@ $(document).on("click", "button.shirt-edit", editShirts);
 $(document).on("click", "button.pants-edit", editPants);
 $(document).on("click", "button.dresses-edit", editDresses);
 $(document).on("click", "button.shoes-edit", editShoes);
-
+var changeShirtId;
 var priceChange = null
 $("#update-submit").on("click", function(event){
     event.preventDefault();
     priceChange =  $("#change-price").val();
+    var updateShirtPrice = {
+        price: priceChange
+    };
+    $.ajax("/api/shirt/" + changeShirtId, {
+        type: "PUT",
+        data: updateShirtPrice,
+    })
+    .then(
+        function() {
+            location.reload();
+        }
+    )
+    console.log("new price:" + priceChange)
     //console.log(priceChange)
 })
 function editShirts() {
-    var changeShirtId = $(this).data("id")
+    changeShirtId = $(this).data("id")
+    console.log(changeShirtId)
     $("#modal2").modal("open")
+    
+}
+$(".modal-close").on("click", function(event){
+    event.preventDefault();
     var updateShirtPrice = {
         price: priceChange
     };
@@ -132,7 +150,8 @@ function editShirts() {
     //     }
     // )
     console.log("new price:" + priceChange)
-}
+})
+
 function editPants() {
     console.log("edit pants")
 }
@@ -155,7 +174,7 @@ $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
         var shirtCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="/assets/images/redshirt.jpg">
+            <img class="activator" src=${shirtArr[i].imgLink}>
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -185,7 +204,7 @@ $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
         var pantsCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="/assets/images/jeans-1.jpg">
+            <img class="activator" src=${pantsArr[i].imgLink}>
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -214,7 +233,7 @@ $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
         var dressesCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="/assets/images/yellowdress.jpg">
+            <img class="activator" src=${dressesArr[i].imgLink}>
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -244,7 +263,7 @@ $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
         var shoesCard = $(`
             <div class="card">
             <div class="card-image">
-            <img class="activator" src="/assets/images/guccishoes.jpeg">
+            <img class="activator" src=${shoesArr[i].imgLink}>
             <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-2"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="card-content">
@@ -269,3 +288,5 @@ $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
     $("#shoes-result").html(shoesReturned);
 });
 });
+
+
