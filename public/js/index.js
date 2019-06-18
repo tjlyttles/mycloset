@@ -1,7 +1,6 @@
 var newDiv = document.createElement("div");
 var submitMsg = "Your item has been added!";
 newDiv.setAttribute("id", "submit-msg");
-var uniqueFilename = new Date().toISOString();
 
 // $(document).ready(function() {
 
@@ -13,7 +12,6 @@ $(document).ready(function() {
   $("select").formSelect();
   $(".collapsible").collapsible();
   $(".sidenav").sidenav();
-
   $(".carousel").carousel();
 
   setInterval(function() {
@@ -24,7 +22,7 @@ $(document).ready(function() {
     fullWidth: true
   });
 });
-
+var uniqueFilename = 0;
 // eslint-disable-next-line no-unused-vars
 function submitForm() {
   $("#img-url").submit();
@@ -52,7 +50,7 @@ $("#submit").on("click", function(event) {
       .trim(),
     suitedFor: $("#q5").val(),
     imgLink:
-      "http://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
+      "https://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
       uniqueFilename +
       ".jpg"
   };
@@ -60,6 +58,7 @@ $("#submit").on("click", function(event) {
   $.post("/api/shirt", newItem).then(function(data) {
     console.log("this" + data);
   });
+  uniqueFilename++;
   submitForm();
   newDiv.append(submitMsg);
   $("#submit-div").append(newDiv);
@@ -70,7 +69,6 @@ $("#submit-pants").on("click", function(event) {
   $("#submit-msg").empty();
   event.preventDefault();
   submitForm();
-  uniqueFilename = new Date().toISOString();
   var newPants = {};
   newPants = {
     size: $("#pq1").val(),
@@ -82,7 +80,7 @@ $("#submit-pants").on("click", function(event) {
     condition: $("#pq4").val(),
     suitedFor: $("#pq5").val(),
     imgLink:
-      "http://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
+      "https://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
       uniqueFilename +
       ".jpg"
   };
