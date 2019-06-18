@@ -134,6 +134,7 @@ module.exports = function(app) {
       res.json(dbPants);
     });
   });
+  
   app.post("/api/upload", function(req, res) {
     
     var upload = multer({ storage }).single("file")
