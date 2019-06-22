@@ -57,6 +57,7 @@
               <input placeholder="Enter Your Name Here" id="user-name" type="text">
 
               <ul class="collapsible">
+                <form id="img-url" enctype="multipart/form-data" action="/api/upload" method="POST"></form>
                 <li>
                   <div class="collapsible-header">Shirt</div>
                   <div class="collapsible-body">
@@ -105,7 +106,7 @@
                         <label for="shirt-price" id="shirt-price-label">Price</label>
                       </div>
                       <div class="input-field col s12">
-                        <form id="img-url" enctype="multipart/form-data" action="/api/upload" method="POST">
+                        
                           <div class="file-field input-field">
                             <div class="waves-effect waves-light btn yellow darken-2">
                               <span>Photo</span>
@@ -116,17 +117,17 @@
                                 placeholder="Upload a photo of your item">
                             </div>
                           </div>
-                        </form>
+                        
                       </div>
                       <div id="submit-div" class="input-field col s12">
-                        <button type="button" value="submit" class="waves-effect waves-light btn yellow darken-2"
-                          id="submit">Submit</button>
-                      </div>
+                        <input type="button" value="submit" class="waves-effect waves-light btn yellow darken-2"
+                          id="submit">
 
 
                     </div>
                   </div>
                 </li>
+              </form>
                 <li>
                   <div class="collapsible-header">Pants</div>
                   <div class="collapsible-body">
@@ -190,7 +191,7 @@
                       </div>
                       <div id="pants-submit-div" class="input-field col s12">
                         <button type="button" value="submit" onclick="submitForm()"
-                          class="waves-effect waves-light btn yellow darken-2" id="submit-pants">Submit</button>
+                          class="waves-effect waves-light btn yellow darken-2" id="submit-pants">Submit</input>
                       </div>
 
                     </div>

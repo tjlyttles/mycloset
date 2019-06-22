@@ -24,44 +24,45 @@ $(document).ready(function() {
 });
 var uniqueFilename = 0;
 // eslint-disable-next-line no-unused-vars
-function submitForm() {
-  $("#img-url").submit();
-}
+// function submitForm() {
+//   $("#img-url").submit();
+// }
 
 $("#submit").on("click", function(event) {
-  $("#submit-msg").empty();
+  //$("#submit-msg").empty();
   event.preventDefault();
-  var newItem = {};
-  newItem = {
-    size: $("#q1")
-      .val()
-      .trim(),
-    color: $("#q2")
-      .val()
-      .trim(),
-    type: $("#q3")
-      .val()
-      .trim(),
-    price: $("#shirt-price")
-      .val()
-      .trim(),
-    condition: $("#q4")
-      .val()
-      .trim(),
-    suitedFor: $("#q5").val(),
-    imgLink:
-      "https://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
-      uniqueFilename +
-      ".jpg"
-  };
-  console.log(newItem);
-  $.post("/api/shirt", newItem).then(function(data) {
-    console.log("this" + data);
-  });
-  uniqueFilename++;
-  submitForm();
-  newDiv.append(submitMsg);
-  $("#submit-div").append(newDiv);
+  $("#img-url").submit();
+  // var newItem = {};
+  // newItem = {
+  //   size: $("#q1")
+  //     .val()
+  //     .trim(),
+  //   color: $("#q2")
+  //     .val()
+  //     .trim(),
+  //   type: $("#q3")
+  //     .val()
+  //     .trim(),
+  //   price: $("#shirt-price")
+  //     .val()
+  //     .trim(),
+  //   condition: $("#q4")
+  //     .val()
+  //     .trim(),
+  //   suitedFor: $("#q5").val(),
+  //   imgLink:
+  //     "https://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
+  //     uniqueFilename +
+  //     ".jpg"
+  // };
+  // console.log(newItem);
+  // $.post("/api/shirt", newItem).then(function(data) {
+  //   console.log("this" + data);
+  // });
+  // uniqueFilename++;
+  // submitForm();
+  // newDiv.append(submitMsg);
+  // $("#submit-div").append(newDiv);
   emptyShirtValue();
 });
 

@@ -138,7 +138,7 @@ module.exports = function(app) {
     });
   });
   app.post("/api/upload", function(req, res) {
-    
+    res.json(req.body)
     var upload = multer({ storage }).single("file")
     
     upload(req, res, function(err) {
