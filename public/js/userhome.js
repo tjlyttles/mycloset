@@ -223,7 +223,7 @@ $.ajax({ url: "/api/allitems", method: "GET" }).then(function(res) {
             <button type="button" value="submit" class="pants-delete waves-effect waves-light btn yellow darken-2" data-id=${pantsArr[k].id}> Delete </button>
             </div>
             </div>`)
-        //console.log(pantsArr[k].color)
+        console.log(pantsArr[k].color)
         pantsReturned.append(pantsCard)
     }
     $("#pants-result").html(pantsReturned);

@@ -3,11 +3,7 @@ var fs = require('fs')
 var cloudinary = require('cloudinary').v2
 var multer = require("multer");
 var path = require("path");
-var uniqueFilename  = new Date().toISOString();
-var imageLink = "http://res.cloudinary.com/imnotacloud/image/upload/v1560647444/" +
-uniqueFilename +
-".jpg"
-
+var uniqueFilename  = 0;
 
 //MULTER
 var storage = multer.diskStorage({
@@ -143,7 +139,7 @@ module.exports = function(app) {
   });
   
   app.post("/api/upload", function(req, res) {
-    
+    res.json(req.body)
     var upload = multer({ storage }).single("file")
     
     upload(req, res, function(err) {
@@ -158,17 +154,17 @@ module.exports = function(app) {
       // SEND FILE TO CLOUDINARY
       cloudinary.config({
         cloud_name:	"imnotacloud",
-        api_key: "417287116435888",
-        api_secret:	"4it0q392YHCOoUsFmidIetyizS4"
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret:	process.env.CLOUDINARY_SECRET
       })
       console.log(req.file)
       var path = req.file.path
       
       cloudinary.uploader.upload(
         path,
-        // { public_id: uniqueFilename },
+         { public_id: uniqueFilename },
         function(err, image) {
-          
+          uniqueFilename++;
           if (err) return res.send(err)
           console.log('Cloudinary upload response:', image)
           
